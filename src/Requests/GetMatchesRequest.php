@@ -1,15 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yoeri
- * Date: 2/23/19
- * Time: 11:00 AM
- */
 
 namespace Yoerioptr\TabtApiClient\Requests;
 
-
-class GetMatchesRequest
+/**
+ * Class GetMatchesRequest
+ *
+ * @package Yoerioptr\TabtApiClient\Requests
+ */
+class GetMatchesRequest extends RequestBase
 {
-
+    /**
+     * @return string
+     */
+    public function getEndpoint(): string
+    {
+        return 'GetMatches';
+    }
 }
