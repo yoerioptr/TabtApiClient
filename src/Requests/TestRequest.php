@@ -2,8 +2,6 @@
 
 namespace Yoerioptr\TabtApiClient\Requests;
 
-use Yoerioptr\TabtApiClient\Models\Credentials;
-
 /**
  * Class TestRequest
  *
@@ -11,16 +9,6 @@ use Yoerioptr\TabtApiClient\Models\Credentials;
  */
 class TestRequest extends RequestBase
 {
-    /**
-     * TestRequest constructor.
-     *
-     * @param array|null $credentials
-     */
-    public function __construct(array $credentials = null)
-    {
-        $this->parameters = $credentials;
-    }
-
     /**
      * @return string
      */

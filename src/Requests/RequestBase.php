@@ -22,6 +22,16 @@ abstract class RequestBase implements RequestInterface
     protected $soapClient;
 
     /**
+     * RequestBase constructor.
+     *
+     * @param array|null $parameters
+     */
+    public function __construct(array $parameters = null)
+    {
+        $this->parameters = $parameters;
+    }
+
+    /**
      * @return array
      */
     public function getParameters(): array
