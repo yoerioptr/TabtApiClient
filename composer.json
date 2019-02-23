@@ -1,0 +1,21 @@
+{
+    "name": "yoerioptr/tabt-api-client",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Yoeri op't Roodt",
+            "email": "yoeri.optroodt@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-soap": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2"
+    }
+}
