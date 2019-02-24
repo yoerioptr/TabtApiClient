@@ -35,15 +35,13 @@ class TestRepository
      */
     public function executeTestRequest(CredentialsType $credentialsType = null): TestResponseType
     {
-        if ($credentialsType != null) {
-            $request = new TestRequest(
-                ['Credentials' => $credentialsType]
-            );
-        } else {
-            $request = new TestRequest();
-        }
+        $request = new TestRequest(
+            [
+                'Credentials' => $credentialsType,
+            ]
+        );
         $request->setSoapClient($this->soapClient);
-        dump($response = $request->handle());
+        $response = $request->handle();
 
         return new TestResponseType($response);
     }
