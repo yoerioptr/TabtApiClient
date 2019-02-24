@@ -2,7 +2,6 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use SoapClient;
 use Yoerioptr\TabtApiClient\Models\CredentialsType;
 use Yoerioptr\TabtApiClient\Models\TestResponseType;
 use Yoerioptr\TabtApiClient\Requests\TestRequest;
@@ -10,23 +9,8 @@ use Yoerioptr\TabtApiClient\Requests\TestRequest;
 /**
  * Class TestRepository
  */
-class TestRepository
+class TestRepository extends RepositoryBase
 {
-    /**
-     * @var SoapClient
-     */
-    private $soapClient;
-
-    /**
-     * TestRepository constructor.
-     *
-     * @param SoapClient $soapClient
-     */
-    public function __construct(SoapClient $soapClient)
-    {
-        $this->soapClient = $soapClient;
-    }
-
     /**
      * @param CredentialsType|null $credentialsType
      *
