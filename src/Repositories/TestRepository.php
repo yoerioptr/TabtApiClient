@@ -17,8 +17,9 @@ class TestRepository extends RepositoryBase
      * @return TestResponseType
      * @throws \Exception
      */
-    public function executeTestRequest(CredentialsType $credentialsType = null): TestResponseType
-    {
+    public function executeTestRequest(
+        CredentialsType $credentialsType = null
+    ): TestResponseType {
         $request = new TestRequest(
             [
                 'Credentials' => $credentialsType,

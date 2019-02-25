@@ -13,8 +13,14 @@ use Yoerioptr\TabtApiClient\Requests\GetSeasonsRequest;
  */
 class SeasonRepository extends RepositoryBase
 {
-    public function executeGetSeasonsRequest(CredentialsType $credentialsType = null)
-    {
+    /**
+     * @param CredentialsType|null $credentialsType
+     *
+     * @return GetSeasonsResponseType
+     */
+    public function executeGetSeasonsRequest(
+        CredentialsType $credentialsType = null
+    ): GetSeasonsResponseType {
         $request = new GetSeasonsRequest(
             [
                 'Credentials' => $credentialsType,
