@@ -65,7 +65,6 @@ class ClubRepository extends RepositoryBase
         $request->setSoapClient($this->soapClient);
         $response = $request->handle();
 
-        dump($response);
         return new GetClubsResponseType($response);
     }
 }

@@ -40,7 +40,7 @@ class ClubEntryType
     private $VenueCount;
 
     /**
-     * @var VenueEntryType[]
+     * @var VenueEntryType|VenueEntryType[]
      */
     private $VenueEntries;
 
@@ -56,12 +56,14 @@ class ClubEntryType
         $this->LongName = $response->LongName;
         $this->Category = $response->Category;
         $this->CategoryName = $response->CategoryName;
-//        TODO Venue isn't an object (faulty documentation or api)
-//        if (($this->VenueCount = $response->VenueCount) > 0){
-//            foreach ($response->VenueEntries as $venueEntry) {
-//                $this->VenueEntries[] = new VenueEntryType($venueEntry);
-//            }
-//        }
+        $this->VenueCount = $response->VenueCount;
+        if (is_array($response->VenueEntries)) {
+            foreach ($response->VenueEntries as $venueEntry) {
+                $this->VenueEntries[] = new VenueEntryType($venueEntry);
+            }
+        } elseif (is_object($response->VenueEntries)) {
+            $this->VenueEntries = new VenueEntryType($response->VenueEntries);
+        }
     }
 
     /**
@@ -113,9 +115,9 @@ class ClubEntryType
     }
 
     /**
-     * @return VenueEntryType[]
+     * @return VenueEntryType|VenueEntryType[]
      */
-    public function getVenueEntries(): array
+    public function getVenueEntries()
     {
         return $this->VenueEntries;
     }
