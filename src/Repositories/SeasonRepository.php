@@ -1,15 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yoeri
- * Date: 2/24/19
- * Time: 6:33 PM
- */
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
+use Yoerioptr\TabtApiClient\Models\CredentialsType;
+use Yoerioptr\TabtApiClient\Models\GetSeasonsResponseType;
+use Yoerioptr\TabtApiClient\Requests\GetSeasonsRequest;
 
-class SeasonRepository
+/**
+ * Class SeasonRepository
+ *
+ * @package Yoerioptr\TabtApiClient\Repositories
+ */
+class SeasonRepository extends RepositoryBase
 {
+    public function executeGetSeasonsRequest(CredentialsType $credentialsType = null)
+    {
+        $request = new GetSeasonsRequest(
+            [
+                'Credentials' => $credentialsType,
+            ]
+        );
+        $request->setSoapClient($this->soapClient);
+        $response = $request->handle();
 
+        return new GetSeasonsResponseType($response);
+    }
 }
