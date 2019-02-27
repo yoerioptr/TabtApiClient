@@ -62,7 +62,7 @@ class ClubEntryType
                 $this->VenueEntries[] = new VenueEntryType($venueEntry);
             }
         } elseif (is_object($response->VenueEntries)) {
-            $this->VenueEntries = new VenueEntryType($response->VenueEntries);
+            $this->VenueEntries[] = new VenueEntryType($response->VenueEntries);
         }
     }
 

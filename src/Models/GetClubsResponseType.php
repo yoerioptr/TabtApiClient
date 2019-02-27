@@ -34,7 +34,7 @@ class GetClubsResponseType
             }
         }
         elseif(is_object($response->ClubEntries)) {
-            $this->ClubEntries = new ClubEntryType($response->ClubEntries);
+            $this->ClubEntries[] = new ClubEntryType($response->ClubEntries);
         }
     }
 
