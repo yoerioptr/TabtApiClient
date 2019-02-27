@@ -56,13 +56,14 @@ class ClubEntryType
         $this->LongName = $response->LongName;
         $this->Category = $response->Category;
         $this->CategoryName = $response->CategoryName;
-        $this->VenueCount = $response->VenueCount;
-        if (is_array($response->VenueEntries)) {
-            foreach ($response->VenueEntries as $venueEntry) {
-                $this->VenueEntries[] = new VenueEntryType($venueEntry);
+        if (($this->VenueCount = $response->VenueCount) != 0) {
+            if (is_array($response->VenueEntries)) {
+                foreach ($response->VenueEntries as $venueEntry) {
+                    $this->VenueEntries[] = new VenueEntryType($venueEntry);
+                }
+            } elseif (is_object($response->VenueEntries)) {
+                $this->VenueEntries[] = new VenueEntryType($response->VenueEntries);
             }
-        } elseif (is_object($response->VenueEntries)) {
-            $this->VenueEntries[] = new VenueEntryType($response->VenueEntries);
         }
     }
 

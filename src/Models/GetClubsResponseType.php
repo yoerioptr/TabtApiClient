@@ -26,15 +26,14 @@ class GetClubsResponseType
      */
     public function __construct(object $response)
     {
-        dump($response);
-        $this->ClubCount = $response->ClubCount;
-        if (is_array($response->ClubEntries)){
-            foreach ($response->ClubEntries as $clubEntry) {
-                $this->ClubEntries[] = new ClubEntryType($clubEntry);
+        if (($this->ClubCount = $response->ClubCount) != 0) {
+            if (is_array($response->ClubEntries)) {
+                foreach ($response->ClubEntries as $clubEntry) {
+                    $this->ClubEntries[] = new ClubEntryType($clubEntry);
+                }
+            } elseif (is_object($response->ClubEntries)) {
+                $this->ClubEntries[] = new ClubEntryType($response->ClubEntries);
             }
-        }
-        elseif(is_object($response->ClubEntries)) {
-            $this->ClubEntries[] = new ClubEntryType($response->ClubEntries);
         }
     }
 
