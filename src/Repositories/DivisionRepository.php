@@ -2,7 +2,6 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use Yoerioptr\TabtApiClient\Models\CredentialsType;
 use Yoerioptr\TabtApiClient\Models\GetDivisionRankingResponseType;
 use Yoerioptr\TabtApiClient\Models\GetDivisionsResponseType;
 use Yoerioptr\TabtApiClient\Requests\GetDivisionRankingRequest;
@@ -16,58 +15,54 @@ use Yoerioptr\TabtApiClient\Requests\GetDivisionsRequest;
 class DivisionRepository extends RepositoryBase
 {
     /**
-     * @param int|null $Season
-     * @param int|null $Level
-     * @param string|null $ShowDivisionName
-     * @param CredentialsType|null $Credentials
+     * @param int|null $season
+     * @param int|null $level
+     * @param string $showDivisionName
      *
      * @return GetDivisionsResponseType
      */
-    public function executeGetDivisionRequest(
-        int $Season = null,
-        int $Level = null,
-        string $ShowDivisionName = null,
-        CredentialsType $Credentials = null
+    public function getDivisions(
+        int $season = null,
+        int $level = null,
+        string $showDivisionName = null
     ): GetDivisionsResponseType {
         $request = new GetDivisionsRequest(
             [
-                'Credentials' => $Credentials,
-                'Season' => $Season,
-                'Level' => $Level,
-                'ShowDivisionName' => $ShowDivisionName,
+                'Credentials' => $this->credentials,
+                'Season' => $season,
+                'Level' => $level,
+                'ShowDivisionName' => $showDivisionName,
             ]
         );
-        $request->setSoapClient($this->soapClient);
-        $response = $request->handle();
 
-        return new GetDivisionsResponseType($response);
+        return new GetDivisionsResponseType(
+            $this->handleRequest($request)
+        );
     }
 
     /**
-     * @param int $DivisionId
-     * @param string $WeekName
-     * @param string|null $RankingSystem
-     * @param CredentialsType|null $Credentials
+     * @param int $divisionId
+     * @param string|null $weekName
+     * @param string|null $rankingSystem
      *
      * @return GetDivisionRankingResponseType
      */
-    public function executeGetDivisionRankingRequest(
-        int $DivisionId,
-        string $WeekName = null,
-        string $RankingSystem = null,
-        CredentialsType $Credentials = null
+    public function getDivisionRanking(
+        int $divisionId,
+        string $weekName = null,
+        string $rankingSystem = null
     ): GetDivisionRankingResponseType {
         $request = new GetDivisionRankingRequest(
             [
-                'Credentials' => $Credentials,
-                'DivisionId' => $DivisionId,
-                'WeekName' => $WeekName,
-                'RankingSystem' => $RankingSystem,
+                'Credentials' => $this->credentials,
+                'DivisionId' => $divisionId,
+                'WeekName' => $weekName,
+                'RankingSystem' => $rankingSystem,
             ]
         );
-        $request->setSoapClient($this->soapClient);
-        $response = $request->handle();
 
-        return new GetDivisionRankingResponseType($response);
+        return new GetDivisionRankingResponseType(
+            $this->handleRequest($request)
+        );
     }
 }

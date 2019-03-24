@@ -2,7 +2,6 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use Yoerioptr\TabtApiClient\Models\CredentialsType;
 use Yoerioptr\TabtApiClient\Models\GetSeasonsResponseType;
 use Yoerioptr\TabtApiClient\Requests\GetSeasonsRequest;
 
@@ -14,21 +13,18 @@ use Yoerioptr\TabtApiClient\Requests\GetSeasonsRequest;
 class SeasonRepository extends RepositoryBase
 {
     /**
-     * @param CredentialsType|null $credentialsType
-     *
      * @return GetSeasonsResponseType
      */
-    public function executeGetSeasonsRequest(
-        CredentialsType $credentialsType = null
-    ): GetSeasonsResponseType {
+    public function getSeasons(): GetSeasonsResponseType
+    {
         $request = new GetSeasonsRequest(
             [
-                'Credentials' => $credentialsType,
+                'Credentials' => $this->credentials,
             ]
         );
-        $request->setSoapClient($this->soapClient);
-        $response = $request->handle();
 
-        return new GetSeasonsResponseType($response);
+        return new GetSeasonsResponseType(
+            $this->handleRequest($request)
+        );
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use Yoerioptr\TabtApiClient\Models\CredentialsType;
 use Yoerioptr\TabtApiClient\Models\GetClubsResponseType;
 use Yoerioptr\TabtApiClient\Models\GetClubTeamsResponseType;
 use Yoerioptr\TabtApiClient\Requests\GetClubsRequest;
@@ -16,55 +15,51 @@ use Yoerioptr\TabtApiClient\Requests\GetClubTeamsRequest;
 class ClubRepository extends RepositoryBase
 {
     /**
-     * @param string $Club
-     * @param int $Season
-     * @param CredentialsType|null $credentialsType
+     * @param string $club
+     * @param int $season
      *
      * @return GetClubTeamsResponseType
      */
-    public function executeGetClubTeamsRequest(
-        string $Club,
-        int $Season,
-        CredentialsType $credentialsType = null
+    public function getClubTeams(
+        string $club,
+        int $season
     ): GetClubTeamsResponseType {
         $request = new GetClubTeamsRequest(
             [
-                'Credentials' => $credentialsType,
-                'Club' => $Club,
-                'Season' => $Season,
+                'Credentials' => $this->credentials,
+                'Club' => $club,
+                'Season' => $season,
             ]
         );
-        $request->setSoapClient($this->soapClient);
-        $response = $request->handle();
 
-        return new GetClubTeamsResponseType($response);
+        return new GetClubTeamsResponseType(
+            $this->handleRequest($request)
+        );
     }
 
     /**
-     * @param string|null $Club
-     * @param int|null $ClubCategory
-     * @param int|null $Season
-     * @param CredentialsType|null $credentialsType
+     * @param string|null $club
+     * @param int|null $clubCategory
+     * @param int|null $season
      *
      * @return GetClubsResponseType
      */
-    public function executeGetClubsRequest(
-        string $Club = null,
-        int $ClubCategory = null,
-        int $Season = null,
-        CredentialsType $credentialsType = null
+    public function getClubs(
+        string $club = null,
+        int $clubCategory = null,
+        int $season = null
     ): GetClubsResponseType {
         $request = new GetClubsRequest(
             [
-                'Credentials' => $credentialsType,
-                'Club' => $Club,
-                'ClubCategory' => $ClubCategory,
-                'Season' => $Season,
+                'Credentials' => $this->credentials,
+                'Club' => $club,
+                'ClubCategory' => $clubCategory,
+                'Season' => $season,
             ]
         );
-        $request->setSoapClient($this->soapClient);
-        $response = $request->handle();
 
-        return new GetClubsResponseType($response);
+        return new GetClubsResponseType(
+            $this->handleRequest($request)
+        );
     }
 }
