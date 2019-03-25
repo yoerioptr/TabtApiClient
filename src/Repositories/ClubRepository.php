@@ -4,6 +4,7 @@ namespace Yoerioptr\TabtApiClient\Repositories;
 
 use Yoerioptr\TabtApiClient\Models\GetClubsResponseType;
 use Yoerioptr\TabtApiClient\Models\GetClubTeamsResponseType;
+use Yoerioptr\TabtApiClient\Models\RequestType\RequestTypeInterface;
 use Yoerioptr\TabtApiClient\Requests\GetClubsRequest;
 use Yoerioptr\TabtApiClient\Requests\GetClubTeamsRequest;
 
@@ -15,21 +16,14 @@ use Yoerioptr\TabtApiClient\Requests\GetClubTeamsRequest;
 class ClubRepository extends RepositoryBase
 {
     /**
-     * @param string $club
-     * @param int $season
+     * @param RequestTypeInterface|null $requestType
      *
      * @return GetClubTeamsResponseType
      */
-    public function getClubTeams(
-        string $club,
-        int $season
-    ): GetClubTeamsResponseType {
+    public function getClubTeams(?RequestTypeInterface $requestType = null): GetClubTeamsResponseType
+    {
         $request = new GetClubTeamsRequest(
-            [
-                'Credentials' => $this->credentials,
-                'Club' => $club,
-                'Season' => $season,
-            ]
+            $this->mergeCredentials($requestType)
         );
 
         return new GetClubTeamsResponseType(
@@ -38,24 +32,14 @@ class ClubRepository extends RepositoryBase
     }
 
     /**
-     * @param string|null $club
-     * @param int|null $clubCategory
-     * @param int|null $season
+     * @param RequestTypeInterface|null $requestType
      *
      * @return GetClubsResponseType
      */
-    public function getClubs(
-        string $club = null,
-        int $clubCategory = null,
-        int $season = null
-    ): GetClubsResponseType {
+    public function getClubs(?RequestTypeInterface $requestType = null): GetClubsResponseType
+    {
         $request = new GetClubsRequest(
-            [
-                'Credentials' => $this->credentials,
-                'Club' => $club,
-                'ClubCategory' => $clubCategory,
-                'Season' => $season,
-            ]
+            $this->mergeCredentials($requestType)
         );
 
         return new GetClubsResponseType(

@@ -2,9 +2,9 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use SoapClient;
-use Yoerioptr\TabtApiClient\Models\CredentialsType;
-use Yoerioptr\TabtApiClient\Models\ResponseTypeInterface;
+use Yoerioptr\TabtApiClient\Models\RequestType\CredentialsType;
+use Yoerioptr\TabtApiClient\Models\RequestType\RequestType;
+use Yoerioptr\TabtApiClient\Models\RequestType\RequestTypeInterface;
 use Yoerioptr\TabtApiClient\Requests\RequestInterface;
 
 /**
@@ -15,24 +15,24 @@ use Yoerioptr\TabtApiClient\Requests\RequestInterface;
 abstract class RepositoryBase
 {
     /**
-     * @var SoapClient
+     * @var \SoapClient
      */
     private $soapClient;
 
     /**
      * @var CredentialsType
      */
-    protected $credentials;
+    private $credentials;
 
     /**
      * RepositoryBase constructor.
      *
-     * @param SoapClient $soapClient
-     * @param CredentialsType $credentials
+     * @param \SoapClient $soapClient
+     * @param CredentialsType|null $credentials
      */
     public function __construct(
-        SoapClient $soapClient,
-        ?CredentialsType $credentials
+        \SoapClient $soapClient,
+        ?CredentialsType $credentials = null
     ) {
         $this->soapClient = $soapClient;
         $this->credentials = $credentials;
@@ -48,5 +48,18 @@ abstract class RepositoryBase
         $request->setSoapClient($this->soapClient);
 
         return $request->handle();
+    }
+
+    /**
+     * @param RequestTypeInterface|null $requestType
+     *
+     * @return RequestTypeInterface|null
+     */
+    protected function mergeCredentials(?RequestTypeInterface $requestType = null): ?RequestTypeInterface
+    {
+        $requestType = $requestType ?? new RequestType();
+        $requestType->Credentials = $this->credentials ?? null;
+
+        return $requestType;
     }
 }

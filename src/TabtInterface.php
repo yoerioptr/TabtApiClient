@@ -2,7 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Tabt;
 
-use Yoerioptr\TabtApiClient\Models\CredentialsType;
+use Yoerioptr\TabtApiClient\Models\RequestType\CredentialsType;
 use Yoerioptr\TabtApiClient\Repositories\DivisionRepository;
 use Yoerioptr\TabtApiClient\Repositories\SeasonRepository;
 use Yoerioptr\TabtApiClient\Repositories\TestRepository;
@@ -19,7 +19,7 @@ interface TabtInterface
      *
      * @param CredentialsType|null $credentials
      */
-    public function __construct(CredentialsType $credentials = null);
+    public function __construct(?CredentialsType $credentials = null);
 
     /**
      * @return TestRepository

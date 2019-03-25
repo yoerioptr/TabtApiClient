@@ -17,11 +17,7 @@ class SeasonRepository extends RepositoryBase
      */
     public function getSeasons(): GetSeasonsResponseType
     {
-        $request = new GetSeasonsRequest(
-            [
-                'Credentials' => $this->credentials,
-            ]
-        );
+        $request = new GetSeasonsRequest($this->mergeCredentials());
 
         return new GetSeasonsResponseType(
             $this->handleRequest($request)

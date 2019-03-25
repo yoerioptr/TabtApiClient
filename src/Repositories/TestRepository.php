@@ -16,11 +16,7 @@ class TestRepository extends RepositoryBase
      */
     public function info(): TestResponseType
     {
-        $request = new TestRequest(
-            [
-                'Credentials' => $this->credentials,
-            ]
-        );
+        $request = new TestRequest($this->mergeCredentials());
 
         return new TestResponseType(
             $this->handleRequest($request)

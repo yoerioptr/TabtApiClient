@@ -4,6 +4,7 @@ namespace Yoerioptr\TabtApiClient\Repositories;
 
 use Yoerioptr\TabtApiClient\Models\GetDivisionRankingResponseType;
 use Yoerioptr\TabtApiClient\Models\GetDivisionsResponseType;
+use Yoerioptr\TabtApiClient\Models\RequestType\RequestTypeInterface;
 use Yoerioptr\TabtApiClient\Requests\GetDivisionRankingRequest;
 use Yoerioptr\TabtApiClient\Requests\GetDivisionsRequest;
 
@@ -15,24 +16,14 @@ use Yoerioptr\TabtApiClient\Requests\GetDivisionsRequest;
 class DivisionRepository extends RepositoryBase
 {
     /**
-     * @param int|null $season
-     * @param int|null $level
-     * @param string $showDivisionName
+     * @param RequestTypeInterface $requestType
      *
-     * @return GetDivisionsResponseType
+     * @return GetDivisionsResponseType|null
      */
-    public function getDivisions(
-        int $season = null,
-        int $level = null,
-        string $showDivisionName = null
-    ): GetDivisionsResponseType {
+    public function getDivisions(?RequestTypeInterface $requestType = null): GetDivisionsResponseType
+    {
         $request = new GetDivisionsRequest(
-            [
-                'Credentials' => $this->credentials,
-                'Season' => $season,
-                'Level' => $level,
-                'ShowDivisionName' => $showDivisionName,
-            ]
+            $this->mergeCredentials($requestType)
         );
 
         return new GetDivisionsResponseType(
@@ -41,24 +32,14 @@ class DivisionRepository extends RepositoryBase
     }
 
     /**
-     * @param int $divisionId
-     * @param string|null $weekName
-     * @param string|null $rankingSystem
+     * @param RequestTypeInterface|null $requestType
      *
      * @return GetDivisionRankingResponseType
      */
-    public function getDivisionRanking(
-        int $divisionId,
-        string $weekName = null,
-        string $rankingSystem = null
-    ): GetDivisionRankingResponseType {
+    public function getDivisionRanking(?RequestTypeInterface $requestType): GetDivisionRankingResponseType
+    {
         $request = new GetDivisionRankingRequest(
-            [
-                'Credentials' => $this->credentials,
-                'DivisionId' => $divisionId,
-                'WeekName' => $weekName,
-                'RankingSystem' => $rankingSystem,
-            ]
+            $this->mergeCredentials($requestType)
         );
 
         return new GetDivisionRankingResponseType(
