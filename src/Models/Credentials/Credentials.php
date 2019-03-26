@@ -1,13 +1,15 @@
 <?php
 
-namespace Yoerioptr\TabtApiClient\Models\RequestType;
+namespace Yoerioptr\TabtApiClient\Models\Credentials;
+
+use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
 
 /**
- * Class CredentialsType
+ * Class Credentials
  *
- * @package Yoerioptr\TabtApiClient\Models
+ * @package Yoerioptr\TabtApiClient\Models\Credentials
  */
-class CredentialsType implements RequestTypeInterface
+class Credentials implements RequestTypeInterface
 {
     /**
      * @var string
@@ -29,7 +31,7 @@ class CredentialsType implements RequestTypeInterface
      * @param string $password
      * @param int|null $onBehalfOf
      *
-     * @return CredentialsType
+     * @return Credentials
      */
     public static function Create(
         string $account,

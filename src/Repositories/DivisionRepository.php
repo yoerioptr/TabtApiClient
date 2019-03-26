@@ -2,9 +2,9 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use Yoerioptr\TabtApiClient\Models\GetDivisionRankingResponseType;
-use Yoerioptr\TabtApiClient\Models\GetDivisionsResponseType;
-use Yoerioptr\TabtApiClient\Models\RequestType\RequestTypeInterface;
+use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
+use Yoerioptr\TabtApiClient\Models\ResponseType\GetDivisionRankingResponseType;
+use Yoerioptr\TabtApiClient\Models\ResponseType\GetDivisionsResponseType;
 use Yoerioptr\TabtApiClient\Requests\GetDivisionRankingRequest;
 use Yoerioptr\TabtApiClient\Requests\GetDivisionsRequest;
 

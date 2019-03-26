@@ -2,7 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Requests;
 
-use Yoerioptr\TabtApiClient\Models\RequestType\RequestTypeInterface;
+use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
 
 /**
  * Class RequestBase
@@ -48,9 +48,9 @@ abstract class RequestBase implements RequestInterface
     }
 
     /**
-     * @return mixed
+     * @return object
      */
-    public function handle()
+    public function handle(): object
     {
         $function = $this->getEndpoint();
         $response = $this->soapClient->$function($this->requestType);

@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Models\RequestType;
 
+use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
+
 /**
  * Class GetClubTeamsRequestType
  *

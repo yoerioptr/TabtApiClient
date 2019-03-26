@@ -1,11 +1,11 @@
 <?php
 
-namespace Yoerioptr\TabtApiClient\Models;
+namespace Yoerioptr\TabtApiClient\Models\EntryType;
 
 /**
  * Class ClubEntryType
  *
- * @package Yoerioptr\TabtApiClient\Models
+ * @package Yoerioptr\TabtApiClient\Models\EntryType
  */
 class ClubEntryType
 {

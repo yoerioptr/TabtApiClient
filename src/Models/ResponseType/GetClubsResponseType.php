@@ -1,11 +1,13 @@
 <?php
 
-namespace Yoerioptr\TabtApiClient\Models;
+namespace Yoerioptr\TabtApiClient\Models\ResponseType;
+
+use Yoerioptr\TabtApiClient\Models\EntryType\ClubEntryType;
 
 /**
  * Class GetClubsResponseType
  *
- * @package Yoerioptr\TabtApiClient\Models
+ * @package Yoerioptr\TabtApiClient\Models\ResponseType
  */
 class GetClubsResponseType
 {

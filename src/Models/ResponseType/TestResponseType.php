@@ -1,11 +1,13 @@
 <?php
 
-namespace Yoerioptr\TabtApiClient\Models;
+namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
 use DateTime;
 
 /**
  * Class TestResponseType
+ *
+ * @package Yoerioptr\TabtApiClient\Models\ResponseType
  */
 class TestResponseType
 {

@@ -1,11 +1,13 @@
 <?php
 
-namespace Yoerioptr\TabtApiClient\Models;
+namespace Yoerioptr\TabtApiClient\Models\ResponseType;
+
+use Yoerioptr\TabtApiClient\Models\EntryType\SeasonEntryType;
 
 /**
  * Class GetSeasonsResponseType
  *
- * @package Yoerioptr\TabtApiClient\Models
+ * @package Yoerioptr\TabtApiClient\Models\ResponseType
  */
 class GetSeasonsResponseType
 {
@@ -29,7 +31,8 @@ class GetSeasonsResponseType
      *
      * @param object $response
      */
-    public function __construct(object $response){
+    public function __construct(object $response)
+    {
         $this->CurrentSeason = $response->CurrentSeason;
         $this->CurrentSeasonName = $response->CurrentSeasonName;
         foreach ($response->SeasonEntries as $seasonEntry) {

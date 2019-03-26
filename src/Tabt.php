@@ -2,7 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Tabt;
 
-use Yoerioptr\TabtApiClient\Models\RequestType\CredentialsType;
+use Yoerioptr\TabtApiClient\Models\Credentials\Credentials;
 use Yoerioptr\TabtApiClient\Repositories\ClubRepository;
 use Yoerioptr\TabtApiClient\Repositories\DivisionRepository;
 use Yoerioptr\TabtApiClient\Repositories\SeasonRepository;
@@ -21,16 +21,16 @@ class Tabt implements TabtInterface
     private $soapClient;
 
     /**
-     * @var CredentialsType|null
+     * @var Credentials|null
      */
     private $credentials;
 
     /**
      * Tabt constructor.
      *
-     * @param CredentialsType|null $credentials
+     * @param Credentials|null $credentials
      */
-    public function __construct(?CredentialsType $credentials = null)
+    public function __construct(?Credentials $credentials = null)
     {
         $this->soapClient = new \SoapClient('http://api.vttl.be?wsdl');
         $this->credentials = $credentials;

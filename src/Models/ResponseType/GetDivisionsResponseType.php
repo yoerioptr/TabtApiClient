@@ -1,11 +1,13 @@
 <?php
 
-namespace Yoerioptr\TabtApiClient\Models;
+namespace Yoerioptr\TabtApiClient\Models\ResponseType;
+
+use Yoerioptr\TabtApiClient\Models\EntryType\DivisionEntryType;
 
 /**
  * Class GetDivisionsResponseType
  *
- * @package Yoerioptr\TabtApiClient\Models
+ * @package Yoerioptr\TabtApiClient\Models\ResponseType
  */
 class GetDivisionsResponseType
 {

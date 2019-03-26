@@ -2,9 +2,9 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use Yoerioptr\TabtApiClient\Models\GetClubsResponseType;
-use Yoerioptr\TabtApiClient\Models\GetClubTeamsResponseType;
-use Yoerioptr\TabtApiClient\Models\RequestType\RequestTypeInterface;
+use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
+use Yoerioptr\TabtApiClient\Models\ResponseType\GetClubsResponseType;
+use Yoerioptr\TabtApiClient\Models\ResponseType\GetClubTeamsResponseType;
 use Yoerioptr\TabtApiClient\Requests\GetClubsRequest;
 use Yoerioptr\TabtApiClient\Requests\GetClubTeamsRequest;
 

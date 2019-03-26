@@ -2,9 +2,9 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use Yoerioptr\TabtApiClient\Models\RequestType\CredentialsType;
+use Yoerioptr\TabtApiClient\Models\Credentials\Credentials;
 use Yoerioptr\TabtApiClient\Models\RequestType\RequestType;
-use Yoerioptr\TabtApiClient\Models\RequestType\RequestTypeInterface;
+use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
 use Yoerioptr\TabtApiClient\Requests\RequestInterface;
 
 /**
@@ -20,7 +20,7 @@ abstract class RepositoryBase
     private $soapClient;
 
     /**
-     * @var CredentialsType
+     * @var Credentials
      */
     private $credentials;
 
@@ -28,11 +28,11 @@ abstract class RepositoryBase
      * RepositoryBase constructor.
      *
      * @param \SoapClient $soapClient
-     * @param CredentialsType|null $credentials
+     * @param Credentials|null $credentials
      */
     public function __construct(
         \SoapClient $soapClient,
-        ?CredentialsType $credentials = null
+        ?Credentials $credentials = null
     ) {
         $this->soapClient = $soapClient;
         $this->credentials = $credentials;

@@ -2,7 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use Yoerioptr\TabtApiClient\Models\TestResponseType;
+use Yoerioptr\TabtApiClient\Models\ResponseType\TestResponseType;
 use Yoerioptr\TabtApiClient\Requests\TestRequest;
 
 /**

@@ -1,11 +1,11 @@
 <?php
 
-namespace Yoerioptr\TabtApiClient\Models;
+namespace Yoerioptr\TabtApiClient\Models\EntryType;
 
 /**
  * Class TeamEntryType
  *
- * @package Yoerioptr\TabtApiClient\Models
+ * @package Yoerioptr\TabtApiClient\Models\EntryType
  */
 class TeamEntryType
 {

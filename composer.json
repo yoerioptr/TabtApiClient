@@ -1,6 +1,7 @@
 {
     "name": "yoerioptr/tabt-api-client",
     "type": "library",
+    "description": "Helper library for the TabT API by Frenoy. For more information visit 'http://api.frenoy.net/'",
     "authors": [
         {
             "name": "Yoeri op't Roodt",

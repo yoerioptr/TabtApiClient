@@ -2,7 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
-use Yoerioptr\TabtApiClient\Models\GetSeasonsResponseType;
+use Yoerioptr\TabtApiClient\Models\ResponseType\GetSeasonsResponseType;
 use Yoerioptr\TabtApiClient\Requests\GetSeasonsRequest;
 
 /**
