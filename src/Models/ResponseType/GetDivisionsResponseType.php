@@ -14,12 +14,12 @@ class GetDivisionsResponseType
     /**
      * @var int
      */
-    private $DivisionCount;
+    private $divisionCount;
 
     /**
      * @var DivisionEntryType[]
      */
-    private $DivisionEntries;
+    private $divisionEntries = [];
 
     /**
      * GetDivisionsResponseType constructor.
@@ -28,14 +28,17 @@ class GetDivisionsResponseType
      */
     public function __construct(object $response)
     {
-        $this->DivisionCount = $response->DivisionCount;
-        if (is_array($response->DivisionEntries)) {
-            foreach ($response->DivisionEntries as $divisionEntry) {
-                $this->DivisionEntries[] = new DivisionEntryType($divisionEntry);
+        $this->divisionCount = $response->DivisionCount;
+
+        if ($this->divisionCount !== 0) {
+            if (is_array($response->DivisionEntries)) {
+                foreach ($response->DivisionEntries as $divisionEntry) {
+                    $this->divisionEntries[] = new DivisionEntryType($divisionEntry);
+                }
             }
-        }
-        elseif (is_object($response->DivisionEntries)) {
-            $this->DivisionEntries[] = new DivisionEntryType($response->DivisionEntries);
+            elseif (is_object($response->DivisionEntries)) {
+                $this->divisionEntries[] = new DivisionEntryType($response->DivisionEntries);
+            }
         }
     }
 
@@ -44,7 +47,7 @@ class GetDivisionsResponseType
      */
     public function getDivisionCount(): int
     {
-        return $this->DivisionCount;
+        return $this->divisionCount;
     }
 
     /**
@@ -52,6 +55,6 @@ class GetDivisionsResponseType
      */
     public function getDivisionEntries(): array
     {
-        return $this->DivisionEntries;
+        return $this->divisionEntries;
     }
 }

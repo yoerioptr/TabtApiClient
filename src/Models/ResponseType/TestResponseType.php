@@ -14,47 +14,47 @@ class TestResponseType
     /**
      * @var DateTime
      */
-    private $Timestamp;
+    private $timestamp;
 
     /**
      * @var string
      */
-    private $ApiVersion;
+    private $apiVersion;
 
     /**
      * @var bool
      */
-    private $IsValidAccount;
+    private $isValidAccount;
 
     /**
      * @var string
      */
-    private $Language;
+    private $language;
 
     /**
      * @var string
      */
-    private $Database;
+    private $database;
 
     /**
      * @var string
      */
-    private $RequestorIp;
+    private $requestorIp;
 
     /**
      * @var int
      */
-    private $ConsumedTicks;
+    private $consumedTicks;
 
     /**
      * @var int
      */
-    private $CurrentQuota;
+    private $currentQuota;
 
     /**
      * @var int
      */
-    private $AllowedQuota;
+    private $allowedQuota;
 
     /**
      * TestResponse constructor.
@@ -65,15 +65,15 @@ class TestResponseType
      */
     public function __construct(object $response)
     {
-        $this->Timestamp = new DateTime($response->Timestamp);
-        $this->ApiVersion = $response->ApiVersion;
-        $this->IsValidAccount = $response->IsValidAccount;
-        $this->Language = $response->Language;
-        $this->Database = $response->Database;
-        $this->RequestorIp = $response->RequestorIp;
-        $this->ConsumedTicks = $response->ConsumedTicks;
-        $this->CurrentQuota = $response->CurrentQuota;
-        $this->AllowedQuota = $response->AllowedQuota;
+        $this->timestamp = new DateTime($response->Timestamp);
+        $this->apiVersion = $response->ApiVersion;
+        $this->isValidAccount = $response->IsValidAccount;
+        $this->language = $response->Language;
+        $this->database = $response->Database;
+        $this->requestorIp = $response->RequestorIp;
+        $this->consumedTicks = $response->ConsumedTicks;
+        $this->currentQuota = $response->CurrentQuota;
+        $this->allowedQuota = $response->AllowedQuota;
     }
 
     /**
@@ -81,7 +81,7 @@ class TestResponseType
      */
     public function getTimestamp(): DateTime
     {
-        return $this->Timestamp;
+        return $this->timestamp;
     }
 
     /**
@@ -89,7 +89,7 @@ class TestResponseType
      */
     public function getApiVersion(): string
     {
-        return $this->ApiVersion;
+        return $this->apiVersion;
     }
 
     /**
@@ -97,7 +97,7 @@ class TestResponseType
      */
     public function IsValidAccount(): bool
     {
-        return $this->IsValidAccount;
+        return $this->isValidAccount;
     }
 
     /**
@@ -105,7 +105,7 @@ class TestResponseType
      */
     public function getLanguage(): string
     {
-        return $this->Language;
+        return $this->language;
     }
 
     /**
@@ -113,7 +113,7 @@ class TestResponseType
      */
     public function getDatabase(): string
     {
-        return $this->Database;
+        return $this->database;
     }
 
     /**
@@ -121,7 +121,7 @@ class TestResponseType
      */
     public function getRequestorIp(): string
     {
-        return $this->RequestorIp;
+        return $this->requestorIp;
     }
 
     /**
@@ -129,7 +129,7 @@ class TestResponseType
      */
     public function getConsumedTicks(): int
     {
-        return $this->ConsumedTicks;
+        return $this->consumedTicks;
     }
 
     /**
@@ -137,7 +137,7 @@ class TestResponseType
      */
     public function getCurrentQuota(): int
     {
-        return $this->CurrentQuota;
+        return $this->currentQuota;
     }
 
     /**
@@ -145,6 +145,6 @@ class TestResponseType
      */
     public function getAllowedQuota(): int
     {
-        return $this->AllowedQuota;
+        return $this->allowedQuota;
     }
 }

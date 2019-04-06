@@ -12,37 +12,37 @@ class VenueEntryType
     /**
      * @var int
      */
-    private $Id;
+    private $id;
 
     /**
      * @var int
      */
-    private $ClubVenue;
+    private $clubVenue;
 
     /**
      * @var string
      */
-    private $Name;
+    private $name;
 
     /**
      * @var string
      */
-    private $Street;
+    private $street;
 
     /**
      * @var string
      */
-    private $Town;
+    private $town;
 
     /**
      * @var string
      */
-    private $Phone;
+    private $phone;
 
     /**
      * @var string
      */
-    private $Comment;
+    private $comment;
 
     /**
      * VenueEntryType constructor.
@@ -51,13 +51,13 @@ class VenueEntryType
      */
     public function __construct(object $response)
     {
-        $this->Id = $response->Id;
-        $this->ClubVenue = $response->ClubVenue;
-        $this->Name = $response->Name;
-        $this->Street = $response->Street;
-        $this->Town = $response->Town;
-        $this->Phone = $response->Phone;
-        $this->Comment = $response->Comment;
+        $this->id = $response->Id;
+        $this->clubVenue = $response->ClubVenue;
+        $this->name = $response->Name;
+        $this->street = $response->Street;
+        $this->town = $response->Town;
+        $this->phone = $response->Phone;
+        $this->comment = $response->Comment;
     }
 
     /**
@@ -65,7 +65,7 @@ class VenueEntryType
      */
     public function getId(): int
     {
-        return $this->Id;
+        return $this->id;
     }
 
     /**
@@ -73,7 +73,7 @@ class VenueEntryType
      */
     public function getClubVenue(): int
     {
-        return $this->ClubVenue;
+        return $this->clubVenue;
     }
 
     /**
@@ -81,7 +81,7 @@ class VenueEntryType
      */
     public function getName(): string
     {
-        return $this->Name;
+        return $this->name;
     }
 
     /**
@@ -89,7 +89,7 @@ class VenueEntryType
      */
     public function getStreet(): string
     {
-        return $this->Street;
+        return $this->street;
     }
 
     /**
@@ -97,7 +97,7 @@ class VenueEntryType
      */
     public function getTown(): string
     {
-        return $this->Town;
+        return $this->town;
     }
 
     /**
@@ -105,7 +105,7 @@ class VenueEntryType
      */
     public function getPhone(): string
     {
-        return $this->Phone;
+        return $this->phone;
     }
 
     /**
@@ -113,6 +113,6 @@ class VenueEntryType
      */
     public function getComment(): string
     {
-        return $this->Comment;
+        return $this->comment;
     }
 }

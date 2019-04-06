@@ -12,27 +12,27 @@ class DivisionEntryType
     /**
      * @var int
      */
-    private $DivisionId;
+    private $divisionId;
 
     /**
      * @var string
      */
-    private $DivisionName;
+    private $divisionName;
 
     /**
      * @var int
      */
-    private $DivisionCategory;
+    private $divisionCategory;
 
     /**
      * @var int
      */
-    private $Level;
+    private $level;
 
     /**
      * @var int
      */
-    private $MatchType;
+    private $matchType;
 
     /**
      * DivisionEntryType constructor.
@@ -41,11 +41,11 @@ class DivisionEntryType
      */
     public function __construct(object $response)
     {
-        $this->DivisionId = $response->DivisionId;
-        $this->DivisionName = $response->DivisionName;
-        $this->DivisionCategory = $response->DivisionCategory;
-        $this->Level = $response->Level;
-        $this->MatchType = $response->MatchType;
+        $this->divisionId = $response->DivisionId;
+        $this->divisionName = $response->DivisionName;
+        $this->divisionCategory = $response->DivisionCategory;
+        $this->level = $response->Level;
+        $this->matchType = $response->MatchType;
     }
 
     /**
@@ -53,7 +53,7 @@ class DivisionEntryType
      */
     public function getDivisionId(): int
     {
-        return $this->DivisionId;
+        return $this->divisionId;
     }
 
     /**
@@ -61,7 +61,7 @@ class DivisionEntryType
      */
     public function getDivisionName(): string
     {
-        return $this->DivisionName;
+        return $this->divisionName;
     }
 
     /**
@@ -69,7 +69,7 @@ class DivisionEntryType
      */
     public function getDivisionCategory(): int
     {
-        return $this->DivisionCategory;
+        return $this->divisionCategory;
     }
 
     /**
@@ -77,7 +77,7 @@ class DivisionEntryType
      */
     public function getLevel(): int
     {
-        return $this->Level;
+        return $this->level;
     }
 
     /**
@@ -85,6 +85,6 @@ class DivisionEntryType
      */
     public function getMatchType(): int
     {
-        return $this->MatchType;
+        return $this->matchType;
     }
 }

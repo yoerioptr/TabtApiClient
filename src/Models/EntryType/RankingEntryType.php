@@ -12,62 +12,62 @@ class RankingEntryType
     /**
      * @var int
      */
-    private $Position;
+    private $position;
 
     /**
      * @var string
      */
-    private $Team;
+    private $team;
 
     /**
      * @var int
      */
-    private $GamesPlayed;
+    private $gamesPlayed;
 
     /**
      * @var int
      */
-    private $GamesWon;
+    private $gamesWon;
 
     /**
      * @var int
      */
-    private $GamesLost;
+    private $gamesLost;
 
     /**
      * @var int
      */
-    private $GamesDraw;
+    private $gamesDraw;
 
     /**
      * @var int
      */
-    private $IndividualMatchesWon;
+    private $individualMatchesWon;
 
     /**
      * @var int
      */
-    private $IndividualMatchesLost;
+    private $individualMatchesLost;
 
     /**
      * @var int
      */
-    private $IndividualSetsWon;
+    private $individualSetsWon;
 
     /**
      * @var int
      */
-    private $IndividualSetsLost;
+    private $individualSetsLost;
 
     /**
      * @var int
      */
-    private $Points;
+    private $points;
 
     /**
      * @var int
      */
-    private $TeamClub;
+    private $teamClub;
 
     /**
      * RankingEntryType constructor.
@@ -76,18 +76,18 @@ class RankingEntryType
      */
     public function __construct(object $response)
     {
-        $this->Position = $response->Position;
-        $this->Team = $response->Team;
-        $this->GamesPlayed = $response->GamesPlayed;
-        $this->GamesWon = $response->GamesWon;
-        $this->GamesLost = $response->GamesLost;
-        $this->GamesDraw = $response->GamesDraw;
-        $this->IndividualMatchesWon = $response->IndividualMatchesWon;
-        $this->IndividualMatchesLost = $response->IndividualMatchesLost;
-        $this->IndividualSetsWon = $response->IndividualSetsWon;
-        $this->IndividualSetsLost = $response->IndividualSetsLost;
-        $this->Points = $response->Points;
-        $this->TeamClub = $response->TeamClub;
+        $this->position = $response->Position;
+        $this->team = $response->Team;
+        $this->gamesPlayed = $response->GamesPlayed;
+        $this->gamesWon = $response->GamesWon;
+        $this->gamesLost = $response->GamesLost;
+        $this->gamesDraw = $response->GamesDraw;
+        $this->individualMatchesWon = $response->IndividualMatchesWon;
+        $this->individualMatchesLost = $response->IndividualMatchesLost;
+        $this->individualSetsWon = $response->IndividualSetsWon;
+        $this->individualSetsLost = $response->IndividualSetsLost;
+        $this->points = $response->Points;
+        $this->teamClub = $response->TeamClub;
     }
 
     /**
@@ -95,7 +95,7 @@ class RankingEntryType
      */
     public function getPosition(): int
     {
-        return $this->Position;
+        return $this->position;
     }
 
     /**
@@ -103,7 +103,7 @@ class RankingEntryType
      */
     public function getTeam(): string
     {
-        return $this->Team;
+        return $this->team;
     }
 
     /**
@@ -111,7 +111,7 @@ class RankingEntryType
      */
     public function getGamesPlayed(): int
     {
-        return $this->GamesPlayed;
+        return $this->gamesPlayed;
     }
 
     /**
@@ -119,7 +119,7 @@ class RankingEntryType
      */
     public function getGamesWon(): int
     {
-        return $this->GamesWon;
+        return $this->gamesWon;
     }
 
     /**
@@ -127,7 +127,7 @@ class RankingEntryType
      */
     public function getGamesLost(): int
     {
-        return $this->GamesLost;
+        return $this->gamesLost;
     }
 
     /**
@@ -135,7 +135,7 @@ class RankingEntryType
      */
     public function getGamesDraw(): int
     {
-        return $this->GamesDraw;
+        return $this->gamesDraw;
     }
 
     /**
@@ -143,7 +143,7 @@ class RankingEntryType
      */
     public function getIndividualMatchesWon(): int
     {
-        return $this->IndividualMatchesWon;
+        return $this->individualMatchesWon;
     }
 
     /**
@@ -151,7 +151,7 @@ class RankingEntryType
      */
     public function getIndividualMatchesLost(): int
     {
-        return $this->IndividualMatchesLost;
+        return $this->individualMatchesLost;
     }
 
     /**
@@ -159,7 +159,7 @@ class RankingEntryType
      */
     public function getIndividualSetsWon(): int
     {
-        return $this->IndividualSetsWon;
+        return $this->individualSetsWon;
     }
 
     /**
@@ -167,7 +167,7 @@ class RankingEntryType
      */
     public function getIndividualSetsLost(): int
     {
-        return $this->IndividualSetsLost;
+        return $this->individualSetsLost;
     }
 
     /**
@@ -175,7 +175,7 @@ class RankingEntryType
      */
     public function getPoints(): int
     {
-        return $this->Points;
+        return $this->points;
     }
 
     /**
@@ -183,6 +183,6 @@ class RankingEntryType
      */
     public function getTeamClub(): int
     {
-        return $this->TeamClub;
+        return $this->teamClub;
     }
 }

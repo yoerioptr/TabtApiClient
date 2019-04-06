@@ -12,17 +12,17 @@ class SeasonEntryType
     /**
      * @var int
      */
-    private $Season;
+    private $season;
 
     /**
      * @var string
      */
-    private $Name;
+    private $name;
 
     /**
      * @var bool
      */
-    private $IsCurrent;
+    private $isCurrent;
 
     /**
      * SeasonEntryType constructor.
@@ -31,9 +31,9 @@ class SeasonEntryType
      */
     public function __construct(object $response)
     {
-        $this->Season = $response->Season;
-        $this->Name = $response->Name;
-        $this->IsCurrent = $response->IsCurrent;
+        $this->season = $response->Season;
+        $this->name = $response->Name;
+        $this->isCurrent = $response->IsCurrent;
     }
 
     /**
@@ -41,7 +41,7 @@ class SeasonEntryType
      */
     public function getSeason(): int
     {
-        return $this->Season;
+        return $this->season;
     }
 
     /**
@@ -49,7 +49,7 @@ class SeasonEntryType
      */
     public function getName(): string
     {
-        return $this->Name;
+        return $this->name;
     }
 
     /**
@@ -57,6 +57,6 @@ class SeasonEntryType
      */
     public function isCurrent(): bool
     {
-        return $this->IsCurrent;
+        return $this->isCurrent;
     }
 }

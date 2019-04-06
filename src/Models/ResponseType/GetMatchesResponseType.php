@@ -2,6 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
+use Exception;
 use Yoerioptr\TabtApiClient\Models\EntryType\TeamMatchesEntryType;
 use Yoerioptr\TabtApiClient\Models\ResponseTypeInterface;
 
@@ -15,28 +16,47 @@ class GetMatchesResponseType implements ResponseTypeInterface
     /**
      * @var int
      */
-    private $MatchCount;
+    private $matchCount;
 
     /**
      * @var TeamMatchesEntryType[]
      */
-    private $TeamMatchesEntries;
+    private $teamMatchesEntries;
 
     /**
      * ResponseTypeInterface constructor.
      *
      * @param object $response
+     *
+     * @throws Exception
      */
     public function __construct(object $response)
     {
-        $this->MatchCount = $response->MatchCount;
+        $this->matchCount = $response->MatchCount;
+
         if (is_array($response->TeamMatchesEntries)) {
             foreach ($response->TeamMatchesEntries as $teamMatchesEntry) {
-                $this->TeamMatchesEntries[] = new TeamMatchesEntryType($teamMatchesEntry);
+                $this->teamMatchesEntries[] = new TeamMatchesEntryType($teamMatchesEntry);
             }
         }
         elseif (is_object($response->TeamMatchesEntries)) {
-            $this->TeamMatchesEntries[] = new TeamMatchesEntryType($response->TeamMatchesEntries);
+            $this->teamMatchesEntries[] = new TeamMatchesEntryType($response->TeamMatchesEntries);
         }
+    }
+
+    /**
+     * @return int
+     */
+    public function getMatchCount(): int
+    {
+        return $this->matchCount;
+    }
+
+    /**
+     * @return TeamMatchesEntryType[]
+     */
+    public function getTeamMatchesEntries(): array
+    {
+        return $this->teamMatchesEntries;
     }
 }

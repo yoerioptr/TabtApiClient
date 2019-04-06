@@ -2,6 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
+use Exception;
 use Yoerioptr\TabtApiClient\Models\ResponseType\TestResponseType;
 use Yoerioptr\TabtApiClient\Requests\TestRequest;
 
@@ -12,7 +13,7 @@ class TestRepository extends RepositoryBase
 {
     /**
      * @return TestResponseType
-     * @throws \Exception
+     * @throws Exception
      */
     public function info(): TestResponseType
     {

@@ -2,6 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
+use Yoerioptr\TabtApiClient\Models\EntryType\RankingEntryType;
 use Yoerioptr\TabtApiClient\Models\EntryType\TeamEntryType;
 
 /**
@@ -14,17 +15,17 @@ class GetClubTeamsResponseType
     /**
      * @var string
      */
-    private $ClubName;
+    private $clubName;
 
     /**
      * @var int
      */
-    private $TeamCount;
+    private $teamCount;
 
     /**
      * @var TeamEntryType[]
      */
-    private $TeamEntries;
+    private $teamEntries = [];
 
     /**
      * GetClubTeamsResponseType constructor.
@@ -33,10 +34,18 @@ class GetClubTeamsResponseType
      */
     public function __construct(object $response)
     {
-        $this->ClubName = $response->ClubName;
-        $this->TeamCount = $response->TeamCount;
-        foreach ($response->TeamEntries as $teamEntry) {
-            $this->TeamEntries[] = new TeamEntryType($teamEntry);
+        $this->clubName = $response->ClubName;
+        $this->teamCount = $response->TeamCount;
+
+        if ($this->teamCount!== 0) {
+            if (is_array($response->TeamEntries)) {
+                foreach ($response->TeamEntries as $teamEntry) {
+                    $this->teamEntries[] = new TeamEntryType($teamEntry);
+                }
+            }
+            elseif (is_object($response->TeamEntries)) {
+                $this->teamEntries[] = new TeamEntryType($response->TeamEntries);
+            }
         }
     }
 
@@ -45,7 +54,7 @@ class GetClubTeamsResponseType
      */
     public function getClubName(): string
     {
-        return $this->ClubName;
+        return $this->clubName;
     }
 
     /**
@@ -53,7 +62,7 @@ class GetClubTeamsResponseType
      */
     public function getTeamCount(): int
     {
-        return $this->TeamCount;
+        return $this->teamCount;
     }
 
     /**
@@ -61,6 +70,6 @@ class GetClubTeamsResponseType
      */
     public function getTeamEntries(): array
     {
-        return $this->TeamEntries;
+        return $this->teamEntries;
     }
 }

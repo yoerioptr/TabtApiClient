@@ -2,6 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
+use Exception;
 use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
 use Yoerioptr\TabtApiClient\Models\ResponseType\GetMatchesResponseType;
 use Yoerioptr\TabtApiClient\Models\ResponseType\GetMatchSystemsResponseType;
@@ -19,6 +20,7 @@ class MatchRepository extends RepositoryBase
      * @param RequestTypeInterface|null $requestType
      *
      * @return GetMatchesResponseType
+     * @throws Exception
      */
     public function getMatches(
         ?RequestTypeInterface $requestType = null

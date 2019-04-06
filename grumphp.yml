@@ -1,4 +1,13 @@
 parameters:
     git_dir: .
-    bin_dir: vendor/bin
-    tasks: {  }
+    bin_dir: vendor/bin # depends on the project configuration
+    ascii:
+    tasks:
+        git_blacklist:
+            keywords:
+                - '(var_|)dump\(.*\);*'
+                - 'die(;|\(.*\));*'
+            regexp_type: P
+        phpcs:
+        phpstan:
+            level: 1

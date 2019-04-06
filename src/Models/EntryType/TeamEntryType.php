@@ -12,32 +12,32 @@ class TeamEntryType
     /**
      * @var string
      */
-    private $TeamId;
+    private $teamId;
 
     /**
      * @var string
      */
-    private $Team;
+    private $team;
 
     /**
      * @var int
      */
-    private $DivisionId;
+    private $divisionId;
 
     /**
      * @var string
      */
-    private $DivisionName;
+    private $divisionName;
 
     /**
      * @var int
      */
-    private $DivisionCategory;
+    private $divisionCategory;
 
     /**
      * @var int
      */
-    private $MatchType;
+    private $matchType;
 
     /**
      * TeamEntryType constructor.
@@ -46,12 +46,12 @@ class TeamEntryType
      */
     public function __construct(object $response)
     {
-        $this->TeamId = $response->TeamId;
-        $this->Team = $response->Team;
-        $this->DivisionId = $response->DivisionId;
-        $this->DivisionName = $response->DivisionName;
-        $this->DivisionCategory = $response->DivisionCategory;
-        $this->MatchType = $response->MatchType;
+        $this->teamId = $response->TeamId;
+        $this->team = $response->Team;
+        $this->divisionId = $response->DivisionId;
+        $this->divisionName = $response->DivisionName;
+        $this->divisionCategory = $response->DivisionCategory;
+        $this->matchType = $response->MatchType;
     }
 
     /**
@@ -59,7 +59,7 @@ class TeamEntryType
      */
     public function getTeamId(): string
     {
-        return $this->TeamId;
+        return $this->teamId;
     }
 
     /**
@@ -67,7 +67,7 @@ class TeamEntryType
      */
     public function getTeam(): string
     {
-        return $this->Team;
+        return $this->team;
     }
 
     /**
@@ -75,7 +75,7 @@ class TeamEntryType
      */
     public function getDivisionId(): int
     {
-        return $this->DivisionId;
+        return $this->divisionId;
     }
 
     /**
@@ -83,7 +83,7 @@ class TeamEntryType
      */
     public function getDivisionName(): string
     {
-        return $this->DivisionName;
+        return $this->divisionName;
     }
 
     /**
@@ -91,7 +91,7 @@ class TeamEntryType
      */
     public function getDivisionCategory(): int
     {
-        return $this->DivisionCategory;
+        return $this->divisionCategory;
     }
 
     /**
@@ -99,6 +99,6 @@ class TeamEntryType
      */
     public function getMatchType(): int
     {
-        return $this->MatchType;
+        return $this->matchType;
     }
 }

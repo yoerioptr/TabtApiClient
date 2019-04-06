@@ -12,37 +12,37 @@ class ClubEntryType
     /**
      * @var string
      */
-    private $UniqueIndex;
+    private $uniqueIndex;
 
     /**
      * @var string
      */
-    private $Name;
+    private $name;
 
     /**
      * @var string
      */
-    private $LongName;
+    private $longName;
 
     /**
      * @var int
      */
-    private $Category;
+    private $category;
 
     /**
      * @var string
      */
-    private $CategoryName;
+    private $categoryName;
 
     /**
      * @var int
      */
-    private $VenueCount;
+    private $venueCount;
 
     /**
-     * @var VenueEntryType|VenueEntryType[]
+     * @var VenueEntryType[]
      */
-    private $VenueEntries;
+    private $venueEntries;
 
     /**
      * ClubEntryType constructor.
@@ -51,18 +51,21 @@ class ClubEntryType
      */
     public function __construct(object $response)
     {
-        $this->UniqueIndex = $response->UniqueIndex;
-        $this->Name = $response->Name;
-        $this->LongName = $response->LongName;
-        $this->Category = $response->Category;
-        $this->CategoryName = $response->CategoryName;
-        if (($this->VenueCount = $response->VenueCount) != 0) {
+        $this->uniqueIndex = $response->UniqueIndex;
+        $this->name = $response->Name;
+        $this->longName = $response->LongName;
+        $this->category = $response->Category;
+        $this->categoryName = $response->CategoryName;
+        $this->venueCount = $response->VenueCount;
+
+        if ($this->venueCount !== 0) {
             if (is_array($response->VenueEntries)) {
                 foreach ($response->VenueEntries as $venueEntry) {
-                    $this->VenueEntries[] = new VenueEntryType($venueEntry);
+                    $this->venueEntries[] = new VenueEntryType($venueEntry);
                 }
-            } elseif (is_object($response->VenueEntries)) {
-                $this->VenueEntries[] = new VenueEntryType($response->VenueEntries);
+            }
+            elseif (is_object($response->VenueEntries)) {
+                $this->venueEntries[] = new VenueEntryType($response->VenueEntries);
             }
         }
     }
@@ -72,7 +75,7 @@ class ClubEntryType
      */
     public function getUniqueIndex(): string
     {
-        return $this->UniqueIndex;
+        return $this->uniqueIndex;
     }
 
     /**
@@ -80,7 +83,7 @@ class ClubEntryType
      */
     public function getName(): string
     {
-        return $this->Name;
+        return $this->name;
     }
 
     /**
@@ -88,7 +91,7 @@ class ClubEntryType
      */
     public function getLongName(): string
     {
-        return $this->LongName;
+        return $this->longName;
     }
 
     /**
@@ -96,7 +99,7 @@ class ClubEntryType
      */
     public function getCategory(): int
     {
-        return $this->Category;
+        return $this->category;
     }
 
     /**
@@ -104,7 +107,7 @@ class ClubEntryType
      */
     public function getCategoryName(): string
     {
-        return $this->CategoryName;
+        return $this->categoryName;
     }
 
     /**
@@ -112,7 +115,7 @@ class ClubEntryType
      */
     public function getVenueCount(): int
     {
-        return $this->VenueCount;
+        return $this->venueCount;
     }
 
     /**
@@ -120,6 +123,6 @@ class ClubEntryType
      */
     public function getVenueEntries()
     {
-        return $this->VenueEntries;
+        return $this->venueEntries;
     }
 }

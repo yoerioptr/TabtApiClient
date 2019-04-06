@@ -14,12 +14,12 @@ class GetDivisionRankingResponseType
     /**
      * @var string
      */
-    private $DivisionName;
+    private $divisionName;
 
     /**
      * @var RankingEntryType[]
      */
-    private $RankingEntries;
+    private $rankingEntries = [];
 
     /**
      * GetDivisionRankingResponseType constructor.
@@ -28,9 +28,15 @@ class GetDivisionRankingResponseType
      */
     public function __construct(object $response)
     {
-        $this->DivisionName = $response->DivisionName;
-        foreach ($response->RankingEntries as $rankingEntry) {
-            $this->RankingEntries[] = new RankingEntryType($rankingEntry);
+        $this->divisionName = $response->DivisionName;
+
+        if (is_array($response->RankingEntries)) {
+            foreach ($response->RankingEntries as $rankingEntry) {
+                $this->rankingEntries[] = new RankingEntryType($rankingEntry);
+            }
+        }
+        elseif (is_object($response->RankingEntries)) {
+            $this->rankingEntries[] = new RankingEntryType($response->DivisionEntries);
         }
     }
 
@@ -39,7 +45,7 @@ class GetDivisionRankingResponseType
      */
     public function getDivisionName(): string
     {
-        return $this->DivisionName;
+        return $this->divisionName;
     }
 
     /**
@@ -47,6 +53,6 @@ class GetDivisionRankingResponseType
      */
     public function getRankingEntries(): array
     {
-        return $this->RankingEntries;
+        return $this->rankingEntries;
     }
 }

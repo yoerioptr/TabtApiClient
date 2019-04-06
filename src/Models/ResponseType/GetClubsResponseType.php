@@ -14,12 +14,12 @@ class GetClubsResponseType
     /**
      * @var int
      */
-    private $ClubCount;
+    private $clubCount;
 
     /**
-     * @var ClubEntryType|ClubEntryType[]
+     * @var ClubEntryType[]
      */
-    private $ClubEntries;
+    private $clubEntries = [];
 
     /**
      * GetClubsResponseType constructor.
@@ -28,14 +28,16 @@ class GetClubsResponseType
      */
     public function __construct(object $response)
     {
-        if (($this->ClubCount = $response->ClubCount) != 0) {
+        $this->clubCount = $response->ClubCount;
+
+        if ($this->clubCount !== 0) {
             if (is_array($response->ClubEntries)) {
                 foreach ($response->ClubEntries as $clubEntry) {
-                    $this->ClubEntries[] = new ClubEntryType($clubEntry);
+                    $this->clubEntries[] = new ClubEntryType($clubEntry);
                 }
             }
             elseif (is_object($response->ClubEntries)) {
-                $this->ClubEntries[] = new ClubEntryType($response->ClubEntries);
+                $this->clubEntries[] = new ClubEntryType($response->ClubEntries);
             }
         }
     }
@@ -45,7 +47,7 @@ class GetClubsResponseType
      */
     public function getClubCount(): int
     {
-        return $this->ClubCount;
+        return $this->clubCount;
     }
 
     /**
@@ -53,6 +55,6 @@ class GetClubsResponseType
      */
     public function getClubEntries()
     {
-        return $this->ClubEntries;
+        return $this->clubEntries;
     }
 }

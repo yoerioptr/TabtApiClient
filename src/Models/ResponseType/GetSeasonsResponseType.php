@@ -14,17 +14,17 @@ class GetSeasonsResponseType
     /**
      * @var int
      */
-    private $CurrentSeason;
+    private $currentSeason;
 
     /**
      * @var string
      */
-    private $CurrentSeasonName;
+    private $currentSeasonName;
 
     /**
      * @var SeasonEntryType[]
      */
-    private $SeasonEntries;
+    private $seasonEntries = [];
 
     /**
      * GetSeasonsResponseType constructor.
@@ -33,10 +33,16 @@ class GetSeasonsResponseType
      */
     public function __construct(object $response)
     {
-        $this->CurrentSeason = $response->CurrentSeason;
-        $this->CurrentSeasonName = $response->CurrentSeasonName;
-        foreach ($response->SeasonEntries as $seasonEntry) {
-            $this->SeasonEntries[] = new SeasonEntryType($seasonEntry);
+        $this->currentSeason = $response->CurrentSeason;
+        $this->currentSeasonName = $response->CurrentSeasonName;
+
+        if (is_array($response->SeasonEntries)) {
+            foreach ($response->SeasonEntries as $seasonEntry) {
+                $this->seasonEntries[] = new SeasonEntryType($seasonEntry);
+            }
+        }
+        elseif (is_object($response->TeamMatchesEntries)) {
+            $this->seasonEntries[] = new SeasonEntryType($response->SeasonEntries);
         }
     }
 
@@ -45,7 +51,7 @@ class GetSeasonsResponseType
      */
     public function getCurrentSeason(): int
     {
-        return $this->CurrentSeason;
+        return $this->currentSeason;
     }
 
     /**
@@ -53,7 +59,7 @@ class GetSeasonsResponseType
      */
     public function getCurrentSeasonName(): string
     {
-        return $this->CurrentSeasonName;
+        return $this->currentSeasonName;
     }
 
     /**
@@ -61,6 +67,6 @@ class GetSeasonsResponseType
      */
     public function getSeasonEntries(): array
     {
-        return $this->SeasonEntries;
+        return $this->seasonEntries;
     }
 }
