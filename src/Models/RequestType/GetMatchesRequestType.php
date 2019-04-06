@@ -84,13 +84,13 @@ class GetMatchesRequestType implements RequestTypeInterface
 
     /**
      * @param string $param
-     * @param $value
+     * @param mixed $value
      *
      * @return GetMatchesRequestType
      */
-    public static function CreateBy(string $param, $value): self
+    public static function createBy(string $param, $value): self
     {
-        $requestType = new self();
+        $requestType = new static();
         
         $requestType->$param = $value;
 
