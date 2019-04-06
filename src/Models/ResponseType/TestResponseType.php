@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
 use DateTime;
+use Exception;
 
 /**
  * Class TestResponseType
@@ -61,7 +62,7 @@ class TestResponseType
      *
      * @param object $response
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function __construct(object $response)
     {

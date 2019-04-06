@@ -2,7 +2,6 @@
 
 namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
-use Yoerioptr\TabtApiClient\Models\EntryType\RankingEntryType;
 use Yoerioptr\TabtApiClient\Models\EntryType\TeamEntryType;
 
 /**

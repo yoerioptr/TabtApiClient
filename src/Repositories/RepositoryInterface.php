@@ -2,6 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Repositories;
 
+use SoapClient;
 use Yoerioptr\TabtApiClient\Models\Credentials\Credentials;
 
 /**
@@ -14,8 +15,8 @@ interface RepositoryInterface
     /**
      * RepositoryInterface constructor.
      *
-     * @param \SoapClient $soapClient
+     * @param SoapClient $soapClient
      * @param Credentials|null $credentials
      */
-    public function __construct(\SoapClient $soapClient, ?Credentials $credentials);
+    public function __construct(SoapClient $soapClient, ?Credentials $credentials);
 }

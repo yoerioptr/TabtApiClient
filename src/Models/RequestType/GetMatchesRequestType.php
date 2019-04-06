@@ -2,6 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Models\RequestType;
 
+use DateTime;
 use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
 
 /**
@@ -57,12 +58,12 @@ class GetMatchesRequestType implements RequestTypeInterface
     public $ShowDivisionName;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      */
     public $YearDateFrom;
 
     /**
-     * @var \DateTime
+     * @var DateTime
      */
     public $YearDateTo;
 

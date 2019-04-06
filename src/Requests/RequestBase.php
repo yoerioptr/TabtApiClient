@@ -2,6 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Requests;
 
+use SoapClient;
 use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
 
 /**
@@ -17,7 +18,7 @@ abstract class RequestBase implements RequestInterface
     protected $requestType;
 
     /**
-     * @var \SoapClient
+     * @var SoapClient
      */
     protected $soapClient;
 
@@ -40,9 +41,9 @@ abstract class RequestBase implements RequestInterface
     }
 
     /**
-     * @param \SoapClient $soapClient
+     * @param SoapClient $soapClient
      */
-    public function setSoapClient(\SoapClient $soapClient)
+    public function setSoapClient(SoapClient $soapClient)
     {
         $this->soapClient = $soapClient;
     }

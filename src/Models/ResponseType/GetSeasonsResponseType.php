@@ -41,7 +41,7 @@ class GetSeasonsResponseType
                 $this->seasonEntries[] = new SeasonEntryType($seasonEntry);
             }
         }
-        elseif (is_object($response->TeamMatchesEntries)) {
+        elseif (is_object($response->SeasonEntries)) {
             $this->seasonEntries[] = new SeasonEntryType($response->SeasonEntries);
         }
     }

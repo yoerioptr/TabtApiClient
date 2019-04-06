@@ -8,10 +8,7 @@ require 'vendor/autoload.php';
 $tabt = new Tabt();
 
 dump(
-    $tabt->match()->getMatches(
-        GetMatchesRequestType::CreateBy(
-            GetMatchesRequestType::PARAM_DIVISION_ID,
-            12
-        )
+    $tabt->match()->getMatchSystems(
+
     )
 );
