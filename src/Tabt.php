@@ -5,6 +5,7 @@ namespace Yoerioptr\TabtApiClient\Tabt;
 use Yoerioptr\TabtApiClient\Models\Credentials\Credentials;
 use Yoerioptr\TabtApiClient\Repositories\ClubRepository;
 use Yoerioptr\TabtApiClient\Repositories\DivisionRepository;
+use Yoerioptr\TabtApiClient\Repositories\MatchRepository;
 use Yoerioptr\TabtApiClient\Repositories\SeasonRepository;
 use Yoerioptr\TabtApiClient\Repositories\TestRepository;
 
@@ -66,5 +67,13 @@ class Tabt implements TabtInterface
     public function club(): ClubRepository
     {
         return new ClubRepository($this->soapClient, $this->credentials);
+    }
+
+    /**
+     * @return MatchRepository
+     */
+    public function match(): MatchRepository
+    {
+        return new MatchRepository($this->soapClient, $this->credentials);
     }
 }

@@ -12,7 +12,7 @@ use Yoerioptr\TabtApiClient\Requests\RequestInterface;
  *
  * @package Yoerioptr\TabtApiClient\Repositories
  */
-abstract class RepositoryBase
+abstract class RepositoryBase implements RepositoryInterface
 {
     /**
      * @var \SoapClient
@@ -55,8 +55,9 @@ abstract class RepositoryBase
      *
      * @return RequestTypeInterface|null
      */
-    protected function mergeCredentials(?RequestTypeInterface $requestType = null): ?RequestTypeInterface
-    {
+    protected function mergeCredentials(
+        ?RequestTypeInterface $requestType = null
+    ): ?RequestTypeInterface {
         $requestType = $requestType ?? new RequestType();
         $requestType->Credentials = $this->credentials ?? null;
 

@@ -29,8 +29,13 @@ class GetDivisionsResponseType
     public function __construct(object $response)
     {
         $this->DivisionCount = $response->DivisionCount;
-        foreach ($response->DivisionEntries as $divisionEntry) {
-            $this->DivisionEntries[] = new DivisionEntryType($divisionEntry);
+        if (is_array($response->DivisionEntries)) {
+            foreach ($response->DivisionEntries as $divisionEntry) {
+                $this->DivisionEntries[] = new DivisionEntryType($divisionEntry);
+            }
+        }
+        elseif (is_object($response->DivisionEntries)) {
+            $this->DivisionEntries[] = new DivisionEntryType($response->DivisionEntries);
         }
     }
 

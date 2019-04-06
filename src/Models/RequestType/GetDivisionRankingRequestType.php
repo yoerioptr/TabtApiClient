@@ -27,23 +27,19 @@ class GetDivisionRankingRequestType implements RequestTypeInterface
     public $RankingSystem;
 
     /**
-     * @param int $divisionId
-     * @param string|null $weekname
-     * @param string|null $rankingSystem
+     * GetDivisionRankingRequestType constructor.
      *
-     * @return GetDivisionRankingRequestType
+     * @param int $divisionId
+     * @param string|null $weekName
+     * @param string|null $rankingSystem
      */
-    public static function Create(
+    public function __construct(
         int $divisionId,
-        ?string $weekname = null,
+        ?string $weekName = null,
         ?string $rankingSystem = null
-    ): self {
-        $requestType = new self();
-
-        $requestType->DivisionId = $divisionId;
-        $requestType->WeekName = $weekname;
-        $requestType->RankingSystem = $rankingSystem;
-
-        return $requestType;
+    ) {
+        $this->DivisionId = $divisionId;
+        $this->WeekName = $weekName;
+        $this->RankingSystem = $rankingSystem;
     }
 }

@@ -33,7 +33,8 @@ class GetClubsResponseType
                 foreach ($response->ClubEntries as $clubEntry) {
                     $this->ClubEntries[] = new ClubEntryType($clubEntry);
                 }
-            } elseif (is_object($response->ClubEntries)) {
+            }
+            elseif (is_object($response->ClubEntries)) {
                 $this->ClubEntries[] = new ClubEntryType($response->ClubEntries);
             }
         }

@@ -20,8 +20,9 @@ class DivisionRepository extends RepositoryBase
      *
      * @return GetDivisionsResponseType|null
      */
-    public function getDivisions(?RequestTypeInterface $requestType = null): GetDivisionsResponseType
-    {
+    public function getDivisions(
+        ?RequestTypeInterface $requestType = null
+    ): GetDivisionsResponseType {
         $request = new GetDivisionsRequest(
             $this->mergeCredentials($requestType)
         );
@@ -36,8 +37,9 @@ class DivisionRepository extends RepositoryBase
      *
      * @return GetDivisionRankingResponseType
      */
-    public function getDivisionRanking(?RequestTypeInterface $requestType): GetDivisionRankingResponseType
-    {
+    public function getDivisionRanking(
+        ?RequestTypeInterface $requestType
+    ): GetDivisionRankingResponseType {
         $request = new GetDivisionRankingRequest(
             $this->mergeCredentials($requestType)
         );

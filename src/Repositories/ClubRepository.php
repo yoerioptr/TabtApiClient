@@ -20,8 +20,9 @@ class ClubRepository extends RepositoryBase
      *
      * @return GetClubTeamsResponseType
      */
-    public function getClubTeams(?RequestTypeInterface $requestType = null): GetClubTeamsResponseType
-    {
+    public function getClubTeams(
+        ?RequestTypeInterface $requestType = null
+    ): GetClubTeamsResponseType {
         $request = new GetClubTeamsRequest(
             $this->mergeCredentials($requestType)
         );
@@ -36,8 +37,9 @@ class ClubRepository extends RepositoryBase
      *
      * @return GetClubsResponseType
      */
-    public function getClubs(?RequestTypeInterface $requestType = null): GetClubsResponseType
-    {
+    public function getClubs(
+        ?RequestTypeInterface $requestType = null
+    ): GetClubsResponseType {
         $request = new GetClubsRequest(
             $this->mergeCredentials($requestType)
         );

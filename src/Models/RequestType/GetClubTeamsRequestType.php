@@ -22,20 +22,16 @@ class GetClubTeamsRequestType implements RequestTypeInterface
     public $Season;
 
     /**
+     * GetClubTeamsRequestType constructor.
+     *
      * @param string $club
      * @param int $season
-     *
-     * @return GetClubTeamsRequestType
      */
-    public static function Create(
+    public function __construct(
         string $club,
         int $season
-    ): self {
-        $requestType = new self();
-
-        $requestType->Club = $club;
-        $requestType->Season = $season;
-
-        return $requestType;
+    ) {
+        $this->Club = $club;
+        $this->Season = $season;
     }
 }

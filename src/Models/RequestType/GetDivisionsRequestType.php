@@ -27,23 +27,19 @@ class GetDivisionsRequestType implements RequestTypeInterface
     public $ShowDivisionName;
 
     /**
+     * GetDivisionsRequestType constructor.
+     *
      * @param int|null $season
      * @param int|null $level
      * @param string|null $showDivisionName
-     *
-     * @return GetDivisionsRequestType
      */
-    public static function Create(
+    public function __construct(
         ?int $season = null,
         ?int $level = null,
         ?string $showDivisionName = null
-    ): self {
-        $requestType = new self();
-
-        $requestType->Season = $season;
-        $requestType->Level = $level;
-        $requestType->ShowDivisionName = $showDivisionName;
-
-        return $requestType;
+    ) {
+        $this->Season = $season;
+        $this->Level = $level;
+        $this->ShowDivisionName = $showDivisionName;
     }
 }
