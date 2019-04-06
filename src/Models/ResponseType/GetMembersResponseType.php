@@ -30,6 +30,8 @@ class GetMembersResponseType implements ResponseTypeInterface
      */
     public function __construct(object $response)
     {
+        $this->memberCount = $response->MemberCount;
+
         if ($this->memberCount !== 0) {
             if (is_array($response->MemberEntries)) {
                 foreach ($response->MemberEntries as $memberEntry) {
