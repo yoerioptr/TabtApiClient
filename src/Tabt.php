@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Tabt;
 
 use SoapClient;
+use SoapFault;
 use Yoerioptr\TabtApiClient\Models\Credentials\Credentials;
 use Yoerioptr\TabtApiClient\Repositories\ClubRepository;
 use Yoerioptr\TabtApiClient\Repositories\DivisionRepository;
@@ -34,7 +35,7 @@ class Tabt implements TabtInterface
      *
      * @param Credentials|null $credentials
      *
-     * @throws \SoapFault
+     * @throws SoapFault
      */
     public function __construct(?Credentials $credentials = null)
     {

@@ -16,12 +16,12 @@ use Yoerioptr\TabtApiClient\Requests\GetClubTeamsRequest;
 class ClubRepository extends RepositoryBase
 {
     /**
-     * @param RequestTypeInterface|null $requestType
+     * @param RequestTypeInterface $requestType
      *
      * @return GetClubTeamsResponseType
      */
     public function getClubTeams(
-        ?RequestTypeInterface $requestType = null
+        RequestTypeInterface $requestType
     ): GetClubTeamsResponseType {
         $request = new GetClubTeamsRequest(
             $this->mergeCredentials($requestType)

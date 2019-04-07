@@ -27,23 +27,19 @@ class Credentials implements RequestTypeInterface
     public $OnBehalfOf;
 
     /**
+     * Credentials constructor.
+     *
      * @param string $account
      * @param string $password
      * @param int|null $onBehalfOf
-     *
-     * @return Credentials
      */
-    public static function Create(
+    public function __construct(
         string $account,
         string $password,
         ?int $onBehalfOf = null
-    ): self {
-        $requestType = new self();
-
-        $requestType->Account = $account;
-        $requestType->Password = $password;
-        $requestType->OnBehalfOf = $onBehalfOf;
-
-        return $requestType;
+    ) {
+        $this->Account = $account;
+        $this->Password = $password;
+        $this->OnBehalfOf = $onBehalfOf;
     }
 }

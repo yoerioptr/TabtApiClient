@@ -33,12 +33,12 @@ class DivisionRepository extends RepositoryBase
     }
 
     /**
-     * @param RequestTypeInterface|null $requestType
+     * @param RequestTypeInterface $requestType
      *
      * @return GetDivisionRankingResponseType
      */
     public function getDivisionRanking(
-        ?RequestTypeInterface $requestType
+        RequestTypeInterface $requestType
     ): GetDivisionRankingResponseType {
         $request = new GetDivisionRankingRequest(
             $this->mergeCredentials($requestType)
