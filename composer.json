@@ -1,0 +1,25 @@
+{
+    "name": "yoerioptr/tabt-api-client",
+    "type": "library",
+    "description": "Helper library for the TabT API by Frenoy. For more information visit 'http://api.frenoy.net/'",
+    "authors": [
+        {
+            "name": "Yoeri op't Roodt",
+            "email": "yoeri.optroodt@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-soap": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2",
+        "phpro/grumphp": "^0.15.0",
+        "squizlabs/php_codesniffer": "^3.4",
+        "phpstan/phpstan": "^0.11.5"
+    }
+}
