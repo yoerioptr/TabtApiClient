@@ -3,13 +3,14 @@
 namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
 use Yoerioptr\TabtApiClient\Models\EntryType\ClubEntryType;
+use Yoerioptr\TabtApiClient\Models\ResponseTypeInterface;
 
 /**
  * Class GetClubsResponseType
  *
  * @package Yoerioptr\TabtApiClient\Models\ResponseType
  */
-class GetClubsResponseType
+class GetClubsResponseType implements ResponseTypeInterface
 {
     /**
      * @var int

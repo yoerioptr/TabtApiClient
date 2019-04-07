@@ -3,13 +3,14 @@
 namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
 use Yoerioptr\TabtApiClient\Models\EntryType\SeasonEntryType;
+use Yoerioptr\TabtApiClient\Models\ResponseTypeInterface;
 
 /**
  * Class GetSeasonsResponseType
  *
  * @package Yoerioptr\TabtApiClient\Models\ResponseType
  */
-class GetSeasonsResponseType
+class GetSeasonsResponseType implements ResponseTypeInterface
 {
     /**
      * @var int

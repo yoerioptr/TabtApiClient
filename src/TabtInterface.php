@@ -7,6 +7,7 @@ use Yoerioptr\TabtApiClient\Repositories\DivisionRepository;
 use Yoerioptr\TabtApiClient\Repositories\MemberRepository;
 use Yoerioptr\TabtApiClient\Repositories\SeasonRepository;
 use Yoerioptr\TabtApiClient\Repositories\TestRepository;
+use Yoerioptr\TabtApiClient\Repositories\TournamentRepository;
 
 /**
  * Interface TabtInterface
@@ -41,4 +42,9 @@ interface TabtInterface
      * @return MemberRepository
      */
     public function member(): MemberRepository;
+
+    /**
+     * @return TournamentRepository
+     */
+    public function tournament(): TournamentRepository;
 }

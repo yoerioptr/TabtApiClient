@@ -2,12 +2,14 @@
 
 namespace Yoerioptr\TabtApiClient\Models\EntryType;
 
+use Yoerioptr\TabtApiClient\Models\EntryTypeInterface;
+
 /**
  * Class TeamMatchDefinitionEntry
  *
  * @package Yoerioptr\TabtApiClient\Models\EntryType
  */
-class TeamMatchDefinitionEntry
+class TeamMatchDefinitionEntry implements EntryTypeInterface
 {
     /**
      * @var int

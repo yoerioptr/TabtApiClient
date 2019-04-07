@@ -2,12 +2,14 @@
 
 namespace Yoerioptr\TabtApiClient\Models\EntryType;
 
+use Yoerioptr\TabtApiClient\Models\EntryTypeInterface;
+
 /**
  * Class RankingEntryType
  *
  * @package Yoerioptr\TabtApiClient\Models\EntryType
  */
-class RankingEntryType
+class RankingEntryType implements EntryTypeInterface
 {
     /**
      * @var int

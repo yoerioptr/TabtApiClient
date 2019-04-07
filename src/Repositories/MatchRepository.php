@@ -17,13 +17,13 @@ use Yoerioptr\TabtApiClient\Requests\GetMatchSystemsRequest;
 class MatchRepository extends RepositoryBase
 {
     /**
-     * @param RequestTypeInterface|null $requestType
+     * @param RequestTypeInterface $requestType
      *
      * @return GetMatchesResponseType
      * @throws Exception
      */
     public function getMatches(
-        ?RequestTypeInterface $requestType = null
+        RequestTypeInterface $requestType
     ): GetMatchesResponseType {
         $request = new GetMatchesRequest(
             $this->mergeCredentials($requestType)

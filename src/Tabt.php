@@ -10,6 +10,7 @@ use Yoerioptr\TabtApiClient\Repositories\MatchRepository;
 use Yoerioptr\TabtApiClient\Repositories\MemberRepository;
 use Yoerioptr\TabtApiClient\Repositories\SeasonRepository;
 use Yoerioptr\TabtApiClient\Repositories\TestRepository;
+use Yoerioptr\TabtApiClient\Repositories\TournamentRepository;
 
 /**
  * Class Tabt
@@ -87,5 +88,13 @@ class Tabt implements TabtInterface
     public function member(): MemberRepository
     {
         return new MemberRepository($this->soapClient, $this->credentials);
+    }
+
+    /**
+     * @return TournamentRepository
+     */
+    public function tournament(): TournamentRepository
+    {
+        return new TournamentRepository($this->soapClient, $this->credentials);
     }
 }

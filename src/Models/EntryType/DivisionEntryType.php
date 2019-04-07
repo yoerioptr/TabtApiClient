@@ -2,12 +2,14 @@
 
 namespace Yoerioptr\TabtApiClient\Models\EntryType;
 
+use Yoerioptr\TabtApiClient\Models\EntryTypeInterface;
+
 /**
  * Class DivisionEntryType
  *
  * @package Yoerioptr\TabtApiClient\Models\EntryType
  */
-class DivisionEntryType
+class DivisionEntryType implements EntryTypeInterface
 {
     /**
      * @var int

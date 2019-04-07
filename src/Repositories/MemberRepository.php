@@ -14,12 +14,12 @@ use Yoerioptr\TabtApiClient\Requests\GetMembersRequest;
 class MemberRepository extends RepositoryBase
 {
     /**
-     * @param RequestTypeInterface|null $requestType
+     * @param RequestTypeInterface $requestType
      *
      * @return GetMembersResponseType
      */
     public function getMembers(
-        ?RequestTypeInterface $requestType = null
+        RequestTypeInterface $requestType
     ): GetMembersResponseType {
         $request = new GetMembersRequest(
             $this->mergeCredentials($requestType)

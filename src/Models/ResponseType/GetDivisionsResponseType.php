@@ -3,13 +3,14 @@
 namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
 use Yoerioptr\TabtApiClient\Models\EntryType\DivisionEntryType;
+use Yoerioptr\TabtApiClient\Models\ResponseTypeInterface;
 
 /**
  * Class GetDivisionsResponseType
  *
  * @package Yoerioptr\TabtApiClient\Models\ResponseType
  */
-class GetDivisionsResponseType
+class GetDivisionsResponseType implements ResponseTypeInterface
 {
     /**
      * @var int

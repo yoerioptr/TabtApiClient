@@ -2,12 +2,14 @@
 
 namespace Yoerioptr\TabtApiClient\Models\EntryType;
 
+use Yoerioptr\TabtApiClient\Models\EntryTypeInterface;
+
 /**
  * Class TeamEntryType
  *
  * @package Yoerioptr\TabtApiClient\Models\EntryType
  */
-class TeamEntryType
+class TeamEntryType implements EntryTypeInterface
 {
     /**
      * @var string

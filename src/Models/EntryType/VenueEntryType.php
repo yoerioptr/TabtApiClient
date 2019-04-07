@@ -2,12 +2,14 @@
 
 namespace Yoerioptr\TabtApiClient\Models\EntryType;
 
+use Yoerioptr\TabtApiClient\Models\EntryTypeInterface;
+
 /**
  * Class VenueEntryType
  *
  * @package Yoerioptr\TabtApiClient\Models\EntryType
  */
-class VenueEntryType
+class VenueEntryType implements EntryTypeInterface
 {
     /**
      * @var int

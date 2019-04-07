@@ -3,13 +3,14 @@
 namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
 use Yoerioptr\TabtApiClient\Models\EntryType\RankingEntryType;
+use Yoerioptr\TabtApiClient\Models\ResponseTypeInterface;
 
 /**
  * Class GetDivisionRankingResponseType
  *
  * @package Yoerioptr\TabtApiClient\Models\ResponseType
  */
-class GetDivisionRankingResponseType
+class GetDivisionRankingResponseType implements ResponseTypeInterface
 {
     /**
      * @var string

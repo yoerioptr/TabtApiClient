@@ -5,16 +5,16 @@ namespace Yoerioptr\TabtApiClient\Models\EntryType;
 use Yoerioptr\TabtApiClient\Models\EntryTypeInterface;
 
 /**
- * Class SeasonEntryType
+ * Class SerieEntry
  *
- * @package Yoerioptr\TabtApiClient\Models\EntryType
+ * @package Yoerioptr\TabtApiClient\Models\RequestType
  */
-class SeasonEntryType implements EntryTypeInterface
+class SerieEntry implements EntryTypeInterface
 {
     /**
      * @var int
      */
-    private $season;
+    private $uniqueId;
 
     /**
      * @var string
@@ -22,28 +22,22 @@ class SeasonEntryType implements EntryTypeInterface
     private $name;
 
     /**
-     * @var bool
-     */
-    private $isCurrent;
-
-    /**
-     * SeasonEntryType constructor.
+     * SerieEntry constructor.
      *
      * @param object $response
      */
     public function __construct(object $response)
     {
-        $this->season = $response->Season;
+        $this->uniqueId = $response->UniqueId;
         $this->name = $response->Name;
-        $this->isCurrent = $response->IsCurrent;
     }
 
     /**
      * @return int
      */
-    public function getSeason(): int
+    public function getUniqueId(): int
     {
-        return $this->season;
+        return $this->uniqueId;
     }
 
     /**
@@ -52,13 +46,5 @@ class SeasonEntryType implements EntryTypeInterface
     public function getName(): string
     {
         return $this->name;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isCurrent(): bool
-    {
-        return $this->isCurrent;
     }
 }

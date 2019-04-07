@@ -4,13 +4,14 @@ namespace Yoerioptr\TabtApiClient\Models\ResponseType;
 
 use DateTime;
 use Exception;
+use Yoerioptr\TabtApiClient\Models\ResponseTypeInterface;
 
 /**
  * Class TestResponseType
  *
  * @package Yoerioptr\TabtApiClient\Models\ResponseType
  */
-class TestResponseType
+class TestResponseType implements ResponseTypeInterface
 {
     /**
      * @var DateTime
