@@ -26,11 +26,11 @@ class GetTournamentsResponseType implements ResponseTypeInterface
     /**
      * ResponseTypeInterface constructor.
      *
-     * @param object $response
+     * @param $response
      *
      * @throws Exception
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->tournamentCount = $response->TournamentCount;
 

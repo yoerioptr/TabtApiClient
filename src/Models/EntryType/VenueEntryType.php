@@ -49,9 +49,9 @@ class VenueEntryType implements EntryTypeInterface
     /**
      * VenueEntryType constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->id = $response->Id;
         $this->clubVenue = $response->ClubVenue;

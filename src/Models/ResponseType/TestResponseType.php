@@ -61,11 +61,11 @@ class TestResponseType implements ResponseTypeInterface
     /**
      * TestResponse constructor.
      *
-     * @param object $response
+     * @param $response
      *
      * @throws Exception
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->timestamp = new DateTime($response->Timestamp);
         $this->apiVersion = $response->ApiVersion;
