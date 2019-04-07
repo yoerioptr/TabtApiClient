@@ -14,6 +14,6 @@ class GetMembersRequest extends RequestBase
      */
     public function getEndpoint(): string
     {
-        return 'GetMembersRequest';
+        return 'GetMembers';
     }
 }

@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Requests;
 
 use SoapClient;
+use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
 
 /**
  * Class RequestBase
@@ -12,9 +13,9 @@ use SoapClient;
 abstract class RequestBase implements RequestInterface
 {
     /**
-     * @var mixed|null
+     * @var RequestTypeInterface|null
      */
-    protected $parameters;
+    protected $requestType;
 
     /**
      * @var SoapClient
@@ -24,19 +25,19 @@ abstract class RequestBase implements RequestInterface
     /**
      * RequestBase constructor.
      *
-     * @param array|null $parameters
+     * @param RequestTypeInterface|null $requestType
      */
-    public function __construct(array $parameters = null)
+    public function __construct(?RequestTypeInterface $requestType = null)
     {
-        $this->parameters = $parameters;
+        $this->requestType = $requestType;
     }
 
     /**
-     * @return array
+     * @return RequestTypeInterface|null
      */
-    public function getParameters(): array
+    public function getRequestType(): ?RequestTypeInterface
     {
-        return $this->parameters;
+        return $this->requestType;
     }
 
     /**
@@ -48,12 +49,12 @@ abstract class RequestBase implements RequestInterface
     }
 
     /**
-     * @return mixed
+     * @return object
      */
-    public function handle()
+    public function handle(): object
     {
         $function = $this->getEndpoint();
-        $response = $this->soapClient->$function($this->parameters);
+        $response = $this->soapClient->$function($this->requestType);
 
         return $response;
     }

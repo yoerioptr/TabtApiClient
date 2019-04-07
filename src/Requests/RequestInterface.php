@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Requests;
 
 use SoapClient;
+use Yoerioptr\TabtApiClient\Models\RequestTypeInterface;
 
 /**
  * Interface RequestInterface
@@ -17,9 +18,9 @@ interface RequestInterface
     public function getEndpoint(): string;
 
     /**
-     * @return array
+     * @return RequestTypeInterface|null
      */
-    public function getParameters(): array;
+    public function getRequestType(): ?RequestTypeInterface;
 
     /**
      * @param SoapClient $soapClient
@@ -27,7 +28,7 @@ interface RequestInterface
     public function setSoapClient(SoapClient $soapClient);
 
     /**
-     * @return mixed
+     * @return object
      */
-    public function handle();
+    public function handle(): object;
 }
