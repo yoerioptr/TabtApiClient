@@ -25,9 +25,9 @@ class GetClubsResponseType implements ResponseTypeInterface
     /**
      * GetClubsResponseType constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->clubCount = $response->ClubCount;
 

@@ -61,11 +61,11 @@ class TournamentEntry implements EntryTypeInterface
     /**
      * TournamentEntry constructor.
      *
-     * @param object $response
+     * @param $response
      *
      * @throws Exception
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->uniqueIndex = $response->UniqueIndex;
         $this->name = $response->Name;

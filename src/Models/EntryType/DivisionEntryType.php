@@ -39,9 +39,9 @@ class DivisionEntryType implements EntryTypeInterface
     /**
      * DivisionEntryType constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->divisionId = $response->DivisionId;
         $this->divisionName = $response->DivisionName;

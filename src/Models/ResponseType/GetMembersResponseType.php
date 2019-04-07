@@ -26,9 +26,9 @@ class GetMembersResponseType implements ResponseTypeInterface
     /**
      * ResponseTypeInterface constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->memberCount = $response->MemberCount;
 

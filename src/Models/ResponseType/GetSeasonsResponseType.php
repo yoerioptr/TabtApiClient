@@ -30,9 +30,9 @@ class GetSeasonsResponseType implements ResponseTypeInterface
     /**
      * GetSeasonsResponseType constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->currentSeason = $response->CurrentSeason;
         $this->currentSeasonName = $response->CurrentSeasonName;

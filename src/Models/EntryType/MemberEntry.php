@@ -44,9 +44,9 @@ class MemberEntry implements EntryTypeInterface
     /**
      * MemberEntry constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->position = $response->Position;
         $this->uniqueIndex = $response->UniqueIndex;

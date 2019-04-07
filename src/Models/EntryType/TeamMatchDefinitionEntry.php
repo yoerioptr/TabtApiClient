@@ -34,9 +34,9 @@ class TeamMatchDefinitionEntry implements EntryTypeInterface
     /**
      * TeamMatchDefinitionEntry constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->position = $response->Position;
         $this->type = $response->Type;
