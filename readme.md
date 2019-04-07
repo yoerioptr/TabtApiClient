@@ -4,6 +4,14 @@ The TabT API Client is a helper library for [Frenoy's TabT API](http://api.freno
 ## Setup
 Basic setup to get you started using the client.
 
+First of all, install the package via [Composer](https://getcomposer.org/)
+
+```composer log
+composer require yoerioptr/tabt-api-client
+```
+
+Next, initialise the TabT API Client helper class
+
 ```php
 use Yoerioptr\TabtApiClient\Tabt\Tabt;
 
