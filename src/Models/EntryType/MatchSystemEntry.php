@@ -64,9 +64,9 @@ class MatchSystemEntry implements EntryTypeInterface
     /**
      * MatchSystemEntry constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->uniqueIndex = $response->UniqueIndex;
         $this->name = $response->Name;

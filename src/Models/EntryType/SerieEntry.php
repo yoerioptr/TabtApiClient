@@ -24,9 +24,9 @@ class SerieEntry implements EntryTypeInterface
     /**
      * SerieEntry constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->uniqueId = $response->UniqueId;
         $this->name = $response->Name;

@@ -106,11 +106,11 @@ class TeamMatchesEntryType implements EntryTypeInterface
     /**
      * TeamMatchesEntryType constructor.
      *
-     * @param object $response
+     * @param $response
      *
      * @throws Exception
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->matchId = $response->MatchId;
         $this->weekName = $response->WeekName;

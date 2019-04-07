@@ -25,9 +25,9 @@ class GetDivisionRankingResponseType implements ResponseTypeInterface
     /**
      * GetDivisionRankingResponseType constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->divisionName = $response->DivisionName;
 

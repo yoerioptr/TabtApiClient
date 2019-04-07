@@ -29,9 +29,9 @@ class SeasonEntryType implements EntryTypeInterface
     /**
      * SeasonEntryType constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->season = $response->Season;
         $this->name = $response->Name;

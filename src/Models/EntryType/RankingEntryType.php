@@ -74,9 +74,9 @@ class RankingEntryType implements EntryTypeInterface
     /**
      * RankingEntryType constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->position = $response->Position;
         $this->team = $response->Team;

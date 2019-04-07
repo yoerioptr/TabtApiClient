@@ -29,9 +29,9 @@ class TournamentVenueEntryType implements EntryTypeInterface
     /**
      * TournamentVenueEntryType constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->name = $response->Name;
         $this->street = $response->Street;

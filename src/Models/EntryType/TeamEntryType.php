@@ -44,9 +44,9 @@ class TeamEntryType implements EntryTypeInterface
     /**
      * TeamEntryType constructor.
      *
-     * @param object $response
+     * @param $response
      */
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->teamId = $response->TeamId;
         $this->team = $response->Team;
