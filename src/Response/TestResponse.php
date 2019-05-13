@@ -1,20 +1,16 @@
 <?php
 
-namespace Yoerioptr\TabtApiClient\Models\ResponseType;
-
-use DateTime;
-use Exception;
-use Yoerioptr\TabtApiClient\Models\ResponseTypeInterface;
+namespace Yoerioptr\TabtApiClient\Response;
 
 /**
- * Class TestResponseType
+ * Class TestResponse
  *
- * @package Yoerioptr\TabtApiClient\Models\ResponseType
+ * @package Yoerioptr\TabtApiClient\Response
  */
-class TestResponseType implements ResponseTypeInterface
+class TestResponse implements ResponseInterface
 {
     /**
-     * @var DateTime
+     * @var \DateTime
      */
     private $timestamp;
 
@@ -61,27 +57,20 @@ class TestResponseType implements ResponseTypeInterface
     /**
      * TestResponse constructor.
      *
-     * @param $response
-     *
-     * @throws Exception
+     * @param object $rawResponse
      */
-    public function __construct($response)
+    public function __construct($rawResponse)
     {
-        $this->timestamp = new DateTime($response->Timestamp);
-        $this->apiVersion = $response->ApiVersion;
-        $this->isValidAccount = $response->IsValidAccount;
-        $this->language = $response->Language;
-        $this->database = $response->Database;
-        $this->requestorIp = $response->RequestorIp;
-        $this->consumedTicks = $response->ConsumedTicks;
-        $this->currentQuota = $response->CurrentQuota;
-        $this->allowedQuota = $response->AllowedQuota;
+        foreach ((array) $rawResponse as $key => $value) {
+            $property = lcfirst($key);
+            $this->$property = $value;
+        }
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
-    public function getTimestamp(): DateTime
+    public function getTimestamp(): \DateTime
     {
         return $this->timestamp;
     }
@@ -97,7 +86,7 @@ class TestResponseType implements ResponseTypeInterface
     /**
      * @return bool
      */
-    public function IsValidAccount(): bool
+    public function isValidAccount(): bool
     {
         return $this->isValidAccount;
     }
