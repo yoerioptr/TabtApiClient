@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Client;
 
 use SoapClient;
+use Yoerioptr\TabtApiClient\Entries\CredentialsType;
 use Yoerioptr\TabtApiClient\Request\RequestInterface;
 use Yoerioptr\TabtApiClient\Response\ResponseInterface;
 
@@ -19,6 +20,11 @@ class Client implements ClientInterface
     private $soapClient;
 
     /**
+     * @var CredentialsType
+     */
+    private $credentials;
+
+    /**
      * Client constructor.
      *
      * @param SoapClient $soapClient
@@ -29,14 +35,26 @@ class Client implements ClientInterface
     }
 
     /**
+     * @param CredentialsType $credentials
+     */
+    public function setCredentials(CredentialsType $credentials): void
+    {
+        $this->credentials = $credentials;
+    }
+
+    /**
      * @param RequestInterface $request
      *
      * @return ResponseInterface
      */
     public function handleRequest(RequestInterface $request): ResponseInterface
     {
+        $parameters = array_merge(
+            $request->getParameters() ?: [],
+            $this->credentials ? $this->credentials->toArray() : []
+        );
+
         $endpoint = $request->getEndpoint();
-        $parameters = $request->getParameters();
         $responseClass = $request->getResponseClass();
 
         $rawResponse = $this->soapClient->$endpoint($parameters);

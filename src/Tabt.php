@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient;
 
 use Yoerioptr\TabtApiClient\Client\ClientInterface;
+use Yoerioptr\TabtApiClient\Repository\ClubRepository;
 use Yoerioptr\TabtApiClient\Repository\SeasonRepository;
 use Yoerioptr\TabtApiClient\Repository\TestRepository;
 
@@ -42,5 +43,13 @@ class Tabt
     public function seasons(): SeasonRepository
     {
         return new SeasonRepository($this->client);
+    }
+
+    /**
+     * @return ClubRepository
+     */
+    public function club(): ClubRepository
+    {
+        return new ClubRepository($this->client);
     }
 }

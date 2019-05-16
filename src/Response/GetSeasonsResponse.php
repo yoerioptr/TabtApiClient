@@ -34,9 +34,8 @@ class GetSeasonsResponse implements ResponseInterface
     public function __construct($rawResponse)
     {
         foreach ((array) $rawResponse as $key => $value) {
-            $property = lcfirst($key);
-
-            if ($property !== 'seasonEntries') {
+            if ($key !== 'SeasonEntries') {
+                $property = lcfirst($key);
                 $this->$property = $value;
                 continue;
             }
