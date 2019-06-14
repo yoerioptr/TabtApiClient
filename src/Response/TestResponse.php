@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Response;
 
+use DateTime;
+
 /**
  * Class TestResponse
  *
@@ -10,7 +12,7 @@ namespace Yoerioptr\TabtApiClient\Response;
 class TestResponse implements ResponseInterface
 {
     /**
-     * @var \DateTime
+     * @var DateTime
      */
     private $timestamp;
 
@@ -68,9 +70,9 @@ class TestResponse implements ResponseInterface
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getTimestamp(): \DateTime
+    public function getTimestamp(): DateTime
     {
         return $this->timestamp;
     }

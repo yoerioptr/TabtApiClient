@@ -22,7 +22,7 @@ class GetClubTeamsResponse implements ResponseInterface
     private $teamCount;
 
     /**
-     * @var
+     * @var TeamEntry[]
      */
     private $teamEntries = [];
 
