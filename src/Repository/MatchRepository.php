@@ -24,11 +24,32 @@ class MatchRepository extends RepositoryBase
         return $this->client->handleRequest($request);
     }
 
+    /**
+     * @param int $divisionId
+     *
+     * @return ResponseInterface
+     */
     public function listMatchesByDivisionId(int $divisionId): ResponseInterface
     {
         $request = new GetMatchesRequest(
             [
                 'DivisionId' => $divisionId,
+            ]
+        );
+
+        return $this->client->handleRequest($request);
+    }
+
+    /**
+     * @param string $club
+     *
+     * @return ResponseInterface
+     */
+    public function listMatchesByClub(string $club): ResponseInterface
+    {
+        $request = new GetMatchesRequest(
+            [
+                'Club' => $club,
             ]
         );
 
