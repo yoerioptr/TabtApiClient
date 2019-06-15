@@ -5,6 +5,7 @@ namespace Yoerioptr\TabtApiClient;
 use Yoerioptr\TabtApiClient\Client\ClientInterface;
 use Yoerioptr\TabtApiClient\Repository\ClubRepository;
 use Yoerioptr\TabtApiClient\Repository\DivisionRepository;
+use Yoerioptr\TabtApiClient\Repository\MatchRepository;
 use Yoerioptr\TabtApiClient\Repository\SeasonRepository;
 use Yoerioptr\TabtApiClient\Repository\TestRepository;
 
@@ -60,5 +61,13 @@ class Tabt
     public function division(): DivisionRepository
     {
         return new DivisionRepository($this->client);
+    }
+
+    /**
+     * @return MatchRepository
+     */
+    public function match(): MatchRepository
+    {
+        return new MatchRepository($this->client);
     }
 }

@@ -10,5 +10,5 @@ namespace Yoerioptr\TabtApiClient\Response;
  */
 interface ResponseInterface
 {
-
+    //
 }
