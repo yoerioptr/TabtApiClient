@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Repository;
 
 use Yoerioptr\TabtApiClient\Request\GetMatchesRequest;
+use Yoerioptr\TabtApiClient\Request\GetMatchSystemsRequest;
 use Yoerioptr\TabtApiClient\Response\ResponseInterface;
 
 /**
@@ -52,6 +53,16 @@ class MatchRepository extends RepositoryBase
                 'Club' => $club,
             ]
         );
+
+        return $this->client->handleRequest($request);
+    }
+
+    /**
+     * @return ResponseInterface
+     */
+    public function listMatchSystems(): ResponseInterface
+    {
+        $request = new GetMatchSystemsRequest([]);
 
         return $this->client->handleRequest($request);
     }
