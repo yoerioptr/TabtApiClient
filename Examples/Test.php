@@ -1,16 +1,20 @@
 <?php
 
-use Yoerioptr\TabtApiClient\Models\Credentials\Credentials;
-use Yoerioptr\TabtApiClient\Tabt\Tabt;
+use Yoerioptr\TabtApiClient\Client\Client;
+use Yoerioptr\TabtApiClient\Entries\CredentialsType;
+use Yoerioptr\TabtApiClient\Tabt;
 
-// Setting up the credentials (optional)
-$credentials = new Credentials(
-    'account',
-    'password'
-);
+$soapClient = new SoapClient("https://api.vttl.be/0.7/?wsdl");
 
-// Creating the TabT helper class
-$tabt = new Tabt($credentials);
+// Instantiate the client
+$client = new Client($soapClient);
 
-// Getting the response
+// Optionally you can provide your credentials
+$credentials = new CredentialsType('username', 'password');
+$client->setCredentials($credentials);
+
+// Instantiate the TabT Api Client
+$tabt = new Tabt($client);
+
+// Make the testRequest using the TestRepository provided by the TabT Api Client
 $testResponse = $tabt->test()->info();
