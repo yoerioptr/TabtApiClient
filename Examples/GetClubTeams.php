@@ -1,16 +1,20 @@
 <?php
 
-use Yoerioptr\TabtApiClient\Models\RequestType\GetClubTeamsRequestType;
-use Yoerioptr\TabtApiClient\Tabt\Tabt;
+use Yoerioptr\TabtApiClient\Client\Client;
+use Yoerioptr\TabtApiClient\Entries\CredentialsType;
+use Yoerioptr\TabtApiClient\Tabt;
 
-// Creating the TabT helper class
-$tabt = new Tabt();
+$soapClient = new SoapClient("https://api.vttl.be/0.7/?wsdl");
 
-// Creating the request
-$getClubTeamsRequestType = new GetClubTeamsRequestType(
-    'LK058',
-    19
-);
+// Instantiate the client
+$client = new Client($soapClient);
 
-// Getting the response
-$getClubTeamsResponse = $tabt->club()->getClubTeams($getClubTeamsRequestType);
+// Optionally you can provide your credentials
+$credentials = new CredentialsType('username', 'password');
+$client->setCredentials($credentials);
+
+// Instantiate the TabT Api Client
+$tabt = new Tabt($client);
+
+// Make the GetClubTeamsRequest using the ClubRepository provided by the TabT Api Client
+$getClubTeamsResponse = $tabt->club()->listTeamsByClub('LK058');
