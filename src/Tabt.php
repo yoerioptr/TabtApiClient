@@ -1,46 +1,35 @@
 <?php
 
-namespace Yoerioptr\TabtApiClient\Tabt;
+namespace Yoerioptr\TabtApiClient;
 
-use SoapClient;
-use SoapFault;
-use Yoerioptr\TabtApiClient\Models\Credentials\Credentials;
-use Yoerioptr\TabtApiClient\Repositories\ClubRepository;
-use Yoerioptr\TabtApiClient\Repositories\DivisionRepository;
-use Yoerioptr\TabtApiClient\Repositories\MatchRepository;
-use Yoerioptr\TabtApiClient\Repositories\MemberRepository;
-use Yoerioptr\TabtApiClient\Repositories\SeasonRepository;
-use Yoerioptr\TabtApiClient\Repositories\TestRepository;
-use Yoerioptr\TabtApiClient\Repositories\TournamentRepository;
+use Yoerioptr\TabtApiClient\Client\ClientInterface;
+use Yoerioptr\TabtApiClient\Repository\ClubRepository;
+use Yoerioptr\TabtApiClient\Repository\DivisionRepository;
+use Yoerioptr\TabtApiClient\Repository\MatchRepository;
+use Yoerioptr\TabtApiClient\Repository\MemberRepository;
+use Yoerioptr\TabtApiClient\Repository\SeasonRepository;
+use Yoerioptr\TabtApiClient\Repository\TestRepository;
 
 /**
  * Class Tabt
  *
- * @package Yoerioptr\TabtApiClient\Tabt
+ * @package Yoerioptr\TabtApiClient
  */
-class Tabt implements TabtInterface
+class Tabt
 {
     /**
-     * @var SoapClient
+     * @var ClientInterface
      */
-    private $soapClient;
-
-    /**
-     * @var Credentials|null
-     */
-    private $credentials;
+    private $client;
 
     /**
      * Tabt constructor.
      *
-     * @param Credentials|null $credentials
-     *
-     * @throws SoapFault
+     * @param ClientInterface $client
      */
-    public function __construct(?Credentials $credentials = null)
+    public function __construct(ClientInterface $client)
     {
-        $this->soapClient = new SoapClient('http://api.vttl.be?wsdl');
-        $this->credentials = $credentials;
+        $this->client = $client;
     }
 
     /**
@@ -48,23 +37,15 @@ class Tabt implements TabtInterface
      */
     public function test(): TestRepository
     {
-        return new TestRepository($this->soapClient, $this->credentials);
-    }
-
-    /**
-     * @return DivisionRepository
-     */
-    public function division(): DivisionRepository
-    {
-        return new DivisionRepository($this->soapClient, $this->credentials);
+        return new TestRepository($this->client);
     }
 
     /**
      * @return SeasonRepository
      */
-    public function season(): SeasonRepository
+    public function seasons(): SeasonRepository
     {
-        return new SeasonRepository($this->soapClient, $this->credentials);
+        return new SeasonRepository($this->client);
     }
 
     /**
@@ -72,7 +53,15 @@ class Tabt implements TabtInterface
      */
     public function club(): ClubRepository
     {
-        return new ClubRepository($this->soapClient, $this->credentials);
+        return new ClubRepository($this->client);
+    }
+
+    /**
+     * @return DivisionRepository
+     */
+    public function division(): DivisionRepository
+    {
+        return new DivisionRepository($this->client);
     }
 
     /**
@@ -80,7 +69,7 @@ class Tabt implements TabtInterface
      */
     public function match(): MatchRepository
     {
-        return new MatchRepository($this->soapClient, $this->credentials);
+        return new MatchRepository($this->client);
     }
 
     /**
@@ -88,14 +77,6 @@ class Tabt implements TabtInterface
      */
     public function member(): MemberRepository
     {
-        return new MemberRepository($this->soapClient, $this->credentials);
-    }
-
-    /**
-     * @return TournamentRepository
-     */
-    public function tournament(): TournamentRepository
-    {
-        return new TournamentRepository($this->soapClient, $this->credentials);
+        return new MemberRepository($this->client);
     }
 }
