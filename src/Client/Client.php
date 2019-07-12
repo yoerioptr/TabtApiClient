@@ -26,12 +26,10 @@ class Client implements ClientInterface
 
     /**
      * Client constructor.
-     *
-     * @param SoapClient $soapClient
      */
-    public function __construct(SoapClient $soapClient)
+    public function __construct()
     {
-        $this->soapClient = $soapClient;
+        $this->soapClient = new SoapClient("https://api.vttl.be/0.7/?wsdl");
     }
 
     /**
