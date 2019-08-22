@@ -4,10 +4,8 @@ use Yoerioptr\TabtApiClient\Client\Client;
 use Yoerioptr\TabtApiClient\Entries\CredentialsType;
 use Yoerioptr\TabtApiClient\Tabt;
 
-$soapClient = new SoapClient("https://api.vttl.be/0.7/?wsdl");
-
 // Instantiate the client
-$client = new Client($soapClient);
+$client = new Client();
 
 // Optionally you can provide your credentials
 $credentials = new CredentialsType('username', 'password');
