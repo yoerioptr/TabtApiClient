@@ -4,6 +4,8 @@ namespace Yoerioptr\TabtApiClient\Repository;
 
 use Yoerioptr\TabtApiClient\Request\GetMatchesRequest;
 use Yoerioptr\TabtApiClient\Request\GetMatchSystemsRequest;
+use Yoerioptr\TabtApiClient\Response\GetMatchesResponse;
+use Yoerioptr\TabtApiClient\Response\GetMatchSystemsResponse;
 use Yoerioptr\TabtApiClient\Response\ResponseInterface;
 
 /**
@@ -16,7 +18,7 @@ class MatchRepository extends RepositoryBase
     /**
      * @param array $parameters
      *
-     * @return ResponseInterface
+     * @return GetMatchesResponse
      */
     public function listMatchesBy(array $parameters): ResponseInterface
     {
@@ -28,7 +30,7 @@ class MatchRepository extends RepositoryBase
     /**
      * @param int $divisionId
      *
-     * @return ResponseInterface
+     * @return GetMatchesResponse
      */
     public function listMatchesByDivisionId(int $divisionId): ResponseInterface
     {
@@ -44,7 +46,7 @@ class MatchRepository extends RepositoryBase
     /**
      * @param string $club
      *
-     * @return ResponseInterface
+     * @return GetMatchesResponse
      */
     public function listMatchesByClub(string $club): ResponseInterface
     {
@@ -58,11 +60,11 @@ class MatchRepository extends RepositoryBase
     }
 
     /**
-     * @return ResponseInterface
+     * @return GetMatchSystemsResponse
      */
     public function listMatchSystems(): ResponseInterface
     {
-        $request = new GetMatchSystemsRequest([]);
+        $request = new GetMatchSystemsRequest();
 
         return $this->client->handleRequest($request);
     }

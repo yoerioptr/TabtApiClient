@@ -15,7 +15,7 @@ use Yoerioptr\TabtApiClient\Repository\TestRepository;
  *
  * @package Yoerioptr\TabtApiClient
  */
-class Tabt
+class Tabt implements TabtInterface
 {
     /**
      * @var ClientInterface
@@ -33,7 +33,7 @@ class Tabt
     }
 
     /**
-     * @return TestRepository
+     * {@inheritDoc}
      */
     public function test(): TestRepository
     {
@@ -41,7 +41,7 @@ class Tabt
     }
 
     /**
-     * @return SeasonRepository
+     * {@inheritDoc}
      */
     public function seasons(): SeasonRepository
     {
@@ -49,7 +49,7 @@ class Tabt
     }
 
     /**
-     * @return ClubRepository
+     * {@inheritDoc}
      */
     public function club(): ClubRepository
     {
@@ -57,7 +57,7 @@ class Tabt
     }
 
     /**
-     * @return DivisionRepository
+     * {@inheritDoc}
      */
     public function division(): DivisionRepository
     {
@@ -65,7 +65,7 @@ class Tabt
     }
 
     /**
-     * @return MatchRepository
+     * {@inheritDoc}
      */
     public function match(): MatchRepository
     {
@@ -73,7 +73,7 @@ class Tabt
     }
 
     /**
-     * @return MemberRepository
+     * {@inheritDoc}
      */
     public function member(): MemberRepository
     {

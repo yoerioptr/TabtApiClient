@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Repository;
 
 use Yoerioptr\TabtApiClient\Request\GetMembersRequest;
+use Yoerioptr\TabtApiClient\Response\GetMembersResponse;
 use Yoerioptr\TabtApiClient\Response\ResponseInterface;
 
 /**
@@ -15,7 +16,7 @@ class MemberRepository extends RepositoryBase
     /**
      * @param array $parameters
      *
-     * @return ResponseInterface
+     * @return GetMembersResponse
      */
     public function listMembersBy(array $parameters): ResponseInterface
     {
@@ -27,7 +28,7 @@ class MemberRepository extends RepositoryBase
     /**
      * @param string $club
      *
-     * @return ResponseInterface
+     * @return GetMembersResponse
      */
     public function listMembersByClub(string $club): ResponseInterface
     {

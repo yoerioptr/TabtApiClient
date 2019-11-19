@@ -66,7 +66,7 @@ class CredentialsType implements RequestTypeInterface
     }
 
     /**
-     * @return array
+     * {@inheritDoc}
      */
     public function toArray(): array
     {

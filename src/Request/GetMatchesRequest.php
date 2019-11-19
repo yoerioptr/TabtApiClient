@@ -11,9 +11,8 @@ use Yoerioptr\TabtApiClient\Response\GetMatchesResponse;
  */
 class GetMatchesRequest extends RequestBase
 {
-
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getEndpoint(): string
     {
@@ -21,7 +20,7 @@ class GetMatchesRequest extends RequestBase
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getResponseClass(): string
     {
