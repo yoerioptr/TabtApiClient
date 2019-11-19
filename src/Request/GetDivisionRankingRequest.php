@@ -12,7 +12,7 @@ use Yoerioptr\TabtApiClient\Response\GetDivisionRankingResponse;
 class GetDivisionRankingRequest extends RequestBase
 {
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getEndpoint(): string
     {
@@ -20,7 +20,7 @@ class GetDivisionRankingRequest extends RequestBase
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getResponseClass(): string
     {

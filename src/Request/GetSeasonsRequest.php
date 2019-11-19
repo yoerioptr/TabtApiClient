@@ -12,7 +12,7 @@ use Yoerioptr\TabtApiClient\Response\GetSeasonsResponse;
 class GetSeasonsRequest extends RequestBase
 {
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getEndpoint(): string
     {
@@ -20,7 +20,7 @@ class GetSeasonsRequest extends RequestBase
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getResponseClass(): string
     {
