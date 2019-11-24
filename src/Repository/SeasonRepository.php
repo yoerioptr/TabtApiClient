@@ -13,6 +13,7 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  */
 class SeasonRepository extends RepositoryBase
 {
+
     /**
      * @return GetSeasonsResponse
      */
@@ -22,4 +23,5 @@ class SeasonRepository extends RepositoryBase
 
         return $this->client->handleRequest($request);
     }
+
 }

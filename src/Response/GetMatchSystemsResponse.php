@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Entries\MatchSystemEntry;
  */
 class GetMatchSystemsResponse implements ResponseInterface
 {
+
     /**
      * @var int
      */
@@ -19,7 +20,7 @@ class GetMatchSystemsResponse implements ResponseInterface
     /**
      * @var array
      */
-    private $matchSystemEntries= [];
+    private $matchSystemEntries = [];
 
     /**
      * GetMatchSystemsResponse constructor.
@@ -36,7 +37,9 @@ class GetMatchSystemsResponse implements ResponseInterface
             }
 
             foreach ($value as $matchSystemEntry) {
-                $this->matchSystemEntries[] = new MatchSystemEntry($matchSystemEntry);
+                $this->matchSystemEntries[] = new MatchSystemEntry(
+                    $matchSystemEntry
+                );
             }
         }
     }
@@ -56,4 +59,5 @@ class GetMatchSystemsResponse implements ResponseInterface
     {
         return $this->matchSystemEntries;
     }
+
 }

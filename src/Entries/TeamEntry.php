@@ -9,6 +9,7 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 class TeamEntry
 {
+
     /**
      * @var string
      */
@@ -100,4 +101,5 @@ class TeamEntry
     {
         return $this->matchType;
     }
+
 }

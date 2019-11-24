@@ -10,6 +10,7 @@ namespace Yoerioptr\TabtApiClient\Request;
  */
 abstract class RequestBase implements RequestInterface
 {
+
     /**
      * RequestBase constructor.
      *
@@ -32,4 +33,5 @@ abstract class RequestBase implements RequestInterface
     {
         return $this->parameters;
     }
+
 }

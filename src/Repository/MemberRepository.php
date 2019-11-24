@@ -13,6 +13,7 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  */
 class MemberRepository extends RepositoryBase
 {
+
     /**
      * @param array $parameters
      *
@@ -40,4 +41,5 @@ class MemberRepository extends RepositoryBase
 
         return $this->client->handleRequest($request);
     }
+
 }

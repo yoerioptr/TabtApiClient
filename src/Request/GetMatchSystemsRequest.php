@@ -12,6 +12,7 @@ use Yoerioptr\TabtApiClient\Response\GetMatchSystemsResponse;
  */
 class GetMatchSystemsRequest extends RequestBase
 {
+
     /**
      * {@inheritDoc}
      */
@@ -27,4 +28,5 @@ class GetMatchSystemsRequest extends RequestBase
     {
         return GetMatchSystemsResponse::class;
     }
+
 }

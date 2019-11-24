@@ -11,6 +11,7 @@ use DateTime;
  */
 class TestResponse implements ResponseInterface
 {
+
     /**
      * @var DateTime
      */
@@ -140,4 +141,5 @@ class TestResponse implements ResponseInterface
     {
         return $this->allowedQuota;
     }
+
 }

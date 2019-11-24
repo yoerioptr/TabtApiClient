@@ -13,6 +13,7 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  */
 class ClubRepository extends RepositoryBase
 {
+
     /**
      * @param string $club
      *
@@ -35,8 +36,10 @@ class ClubRepository extends RepositoryBase
      *
      * @return GetClubTeamsResponse
      */
-    public function listTeamsByClubAndSeason(string $club, int $season): ResponseInterface
-    {
+    public function listTeamsByClubAndSeason(
+        string $club,
+        int $season
+    ): ResponseInterface {
         $request = new GetClubTeamsRequest(
             [
                 'Club' => $club,
@@ -46,4 +49,5 @@ class ClubRepository extends RepositoryBase
 
         return $this->client->handleRequest($request);
     }
+
 }

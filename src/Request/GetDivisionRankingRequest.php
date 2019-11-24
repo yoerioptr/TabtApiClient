@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Response\GetDivisionRankingResponse;
  */
 class GetDivisionRankingRequest extends RequestBase
 {
+
     /**
      * {@inheritDoc}
      */
@@ -26,4 +27,5 @@ class GetDivisionRankingRequest extends RequestBase
     {
         return GetDivisionRankingResponse::class;
     }
+
 }

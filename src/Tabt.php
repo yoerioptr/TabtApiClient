@@ -17,6 +17,7 @@ use Yoerioptr\TabtApiClient\Repository\TestRepository;
  */
 class Tabt implements TabtInterface
 {
+
     /**
      * @var ClientInterface
      */
@@ -79,4 +80,5 @@ class Tabt implements TabtInterface
     {
         return new MemberRepository($this->client);
     }
+
 }

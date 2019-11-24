@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Response\GetSeasonsResponse;
  */
 class GetSeasonsRequest extends RequestBase
 {
+
     /**
      * {@inheritDoc}
      */
@@ -26,4 +27,5 @@ class GetSeasonsRequest extends RequestBase
     {
         return GetSeasonsResponse::class;
     }
+
 }

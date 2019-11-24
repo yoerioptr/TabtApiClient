@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Entries\TeamEntry;
  */
 class GetClubTeamsResponse implements ResponseInterface
 {
+
     /**
      * @var string
      */
@@ -63,10 +64,11 @@ class GetClubTeamsResponse implements ResponseInterface
     }
 
     /**
-     * @return mixed
+     * @return TeamEntry[]
      */
-    public function getTeamEntries()
+    public function getTeamEntries(): array
     {
         return $this->teamEntries;
     }
+
 }

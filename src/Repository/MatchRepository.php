@@ -15,6 +15,7 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  */
 class MatchRepository extends RepositoryBase
 {
+
     /**
      * @param array $parameters
      *
@@ -68,4 +69,5 @@ class MatchRepository extends RepositoryBase
 
         return $this->client->handleRequest($request);
     }
+
 }
