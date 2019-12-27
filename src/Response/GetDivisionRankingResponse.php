@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Entries\RankingEntry;
  */
 class GetDivisionRankingResponse implements ResponseInterface
 {
+
     /**
      * @var string
      */
@@ -56,4 +57,5 @@ class GetDivisionRankingResponse implements ResponseInterface
     {
         return $this->rankingEntries;
     }
+
 }

@@ -9,6 +9,7 @@ namespace Yoerioptr\TabtApiClient\Request;
  */
 interface RequestInterface
 {
+
     /**
      * @return string
      */
@@ -23,4 +24,5 @@ interface RequestInterface
      * @return array
      */
     public function getParameters(): ?array;
+
 }

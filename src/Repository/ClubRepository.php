@@ -2,7 +2,9 @@
 
 namespace Yoerioptr\TabtApiClient\Repository;
 
+use Yoerioptr\TabtApiClient\Request\GetClubsRequest;
 use Yoerioptr\TabtApiClient\Request\GetClubTeamsRequest;
+use Yoerioptr\TabtApiClient\Response\GetClubTeamsResponse;
 use Yoerioptr\TabtApiClient\Response\ResponseInterface;
 
 /**
@@ -12,10 +14,21 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  */
 class ClubRepository extends RepositoryBase
 {
+
+    /**
+     * @return ResponseInterface
+     */
+    public function listClubs(): ResponseInterface
+    {
+        $request = new GetClubsRequest();
+
+        return $this->client->handleRequest($request);
+    }
+
     /**
      * @param string $club
      *
-     * @return ResponseInterface
+     * @return GetClubTeamsResponse
      */
     public function listTeamsByClub(string $club): ResponseInterface
     {
@@ -28,8 +41,16 @@ class ClubRepository extends RepositoryBase
         return $this->client->handleRequest($request);
     }
 
-    public function listTeamsByClubAndSeason(string $club, int $season): ResponseInterface
-    {
+    /**
+     * @param string $club
+     * @param int $season
+     *
+     * @return GetClubTeamsResponse
+     */
+    public function listTeamsByClubAndSeason(
+        string $club,
+        int $season
+    ): ResponseInterface {
         $request = new GetClubTeamsRequest(
             [
                 'Club' => $club,
@@ -39,4 +60,5 @@ class ClubRepository extends RepositoryBase
 
         return $this->client->handleRequest($request);
     }
+
 }

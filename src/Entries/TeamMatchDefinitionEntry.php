@@ -9,6 +9,7 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 class TeamMatchDefinitionEntry
 {
+
     /**
      * @var int
      */
@@ -73,4 +74,5 @@ class TeamMatchDefinitionEntry
     {
         return $this->awayPlayerIndex;
     }
+
 }

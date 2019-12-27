@@ -12,8 +12,14 @@ use Yoerioptr\TabtApiClient\Response\GetMatchesResponse;
 class GetMatchesRequest extends RequestBase
 {
 
+    public const SHOW_DIVISION_NAME = 'yes';
+
+    public const HIDE_DIVISION_NAME = 'no';
+
+    public const SHORT_DIVISION_NAME = 'short';
+
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getEndpoint(): string
     {
@@ -21,10 +27,11 @@ class GetMatchesRequest extends RequestBase
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getResponseClass(): string
     {
         return GetMatchesResponse::class;
     }
+
 }

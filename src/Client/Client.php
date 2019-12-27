@@ -14,6 +14,7 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  */
 class Client implements ClientInterface
 {
+
     /**
      * @var SoapClient
      */
@@ -59,4 +60,5 @@ class Client implements ClientInterface
 
         return new $responseClass($rawResponse);
     }
+
 }

@@ -2,14 +2,14 @@
 
 namespace Yoerioptr\TabtApiClient\Request;
 
-use Yoerioptr\TabtApiClient\Response\GetDivisionRankingResponse;
+use Yoerioptr\TabtApiClient\Response\GetClubsResponse;
 
 /**
- * Class GetDivisionRankingRequest
+ * Class GetClubsRequest
  *
  * @package Yoerioptr\TabtApiClient\Request
  */
-class GetDivisionRankingRequest extends RequestBase
+class GetClubsRequest extends RequestBase
 {
 
     /**
@@ -17,7 +17,7 @@ class GetDivisionRankingRequest extends RequestBase
      */
     public function getEndpoint(): string
     {
-        return 'GetDivisionRanking';
+        return 'GetClubs';
     }
 
     /**
@@ -25,7 +25,7 @@ class GetDivisionRankingRequest extends RequestBase
      */
     public function getResponseClass(): string
     {
-        return GetDivisionRankingResponse::class;
+        return GetClubsResponse::class;
     }
 
 }

@@ -9,6 +9,7 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 class CredentialsType implements RequestTypeInterface
 {
+
     /**
      * @var string
      */
@@ -66,7 +67,7 @@ class CredentialsType implements RequestTypeInterface
     }
 
     /**
-     * @return array
+     * {@inheritDoc}
      */
     public function toArray(): array
     {
@@ -78,4 +79,5 @@ class CredentialsType implements RequestTypeInterface
 
         return $array;
     }
+
 }

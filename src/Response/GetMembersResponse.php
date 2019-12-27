@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Entries\MemberEntry;
  */
 class GetMembersResponse implements ResponseInterface
 {
+
     /**
      * @var int
      */
@@ -40,4 +41,21 @@ class GetMembersResponse implements ResponseInterface
             }
         }
     }
+
+    /**
+     * @return int
+     */
+    public function getMemberCount(): int
+    {
+        return $this->memberCount;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMemberEntries(): array
+    {
+        return $this->memberEntries;
+    }
+
 }

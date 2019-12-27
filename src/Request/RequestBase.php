@@ -10,21 +10,28 @@ namespace Yoerioptr\TabtApiClient\Request;
  */
 abstract class RequestBase implements RequestInterface
 {
+
+    /**
+     * RequestBase constructor.
+     *
+     * @param array|null $parameters
+     */
     public function __construct(array $parameters = null)
     {
         $this->parameters = $parameters;
     }
 
     /**
-     * @var array
+     * @var array|null
      */
     protected $parameters;
 
     /**
-     * @return array
+     * {@inheritDoc}
      */
     public function getParameters(): ?array
     {
         return $this->parameters;
     }
+
 }

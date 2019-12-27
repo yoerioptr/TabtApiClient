@@ -11,8 +11,9 @@ use Yoerioptr\TabtApiClient\Response\GetClubTeamsResponse;
  */
 class GetClubTeamsRequest extends RequestBase
 {
+
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getEndpoint(): string
     {
@@ -20,10 +21,11 @@ class GetClubTeamsRequest extends RequestBase
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getResponseClass(): string
     {
         return GetClubTeamsResponse::class;
     }
+
 }
