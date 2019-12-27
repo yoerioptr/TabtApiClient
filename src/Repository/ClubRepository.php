@@ -2,6 +2,7 @@
 
 namespace Yoerioptr\TabtApiClient\Repository;
 
+use Yoerioptr\TabtApiClient\Request\GetClubsRequest;
 use Yoerioptr\TabtApiClient\Request\GetClubTeamsRequest;
 use Yoerioptr\TabtApiClient\Response\GetClubTeamsResponse;
 use Yoerioptr\TabtApiClient\Response\ResponseInterface;
@@ -13,6 +14,16 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  */
 class ClubRepository extends RepositoryBase
 {
+
+    /**
+     * @return ResponseInterface
+     */
+    public function listClubs(): ResponseInterface
+    {
+        $request = new GetClubsRequest();
+
+        return $this->client->handleRequest($request);
+    }
 
     /**
      * @param string $club
