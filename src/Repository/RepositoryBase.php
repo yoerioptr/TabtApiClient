@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Client\ClientInterface;
  */
 abstract class RepositoryBase
 {
+
     /**
      * @var ClientInterface
      */
@@ -25,4 +26,5 @@ abstract class RepositoryBase
     {
         $this->client = $client;
     }
+
 }

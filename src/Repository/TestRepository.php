@@ -13,6 +13,7 @@ use Yoerioptr\TabtApiClient\Response\TestResponse;
  */
 class TestRepository extends RepositoryBase
 {
+
     /**
      * @return TestResponse
      */
@@ -22,4 +23,5 @@ class TestRepository extends RepositoryBase
 
         return $this->client->handleRequest($request);
     }
+
 }

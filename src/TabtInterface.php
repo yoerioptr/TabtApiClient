@@ -16,6 +16,7 @@ use Yoerioptr\TabtApiClient\Repository\TestRepository;
  */
 interface TabtInterface
 {
+
     /**
      * @return TestRepository
      */
@@ -45,4 +46,5 @@ interface TabtInterface
      * @return MemberRepository
      */
     public function member(): MemberRepository;
+
 }

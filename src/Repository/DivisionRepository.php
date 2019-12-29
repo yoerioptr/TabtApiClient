@@ -13,13 +13,14 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  */
 class DivisionRepository extends RepositoryBase
 {
+
     /**
      * @param int $divisionId
      *
      * @return GetDivisionRankingResponse
      */
-    public function listDivisionsRankingByDivisionId(int $divisionId): ResponseInterface
-    {
+    public function listDivisionsRankingByDivisionId(int $divisionId
+    ): ResponseInterface {
         $request = new GetDivisionRankingRequest(
             [
                 'DivisionId' => $divisionId,
@@ -35,8 +36,10 @@ class DivisionRepository extends RepositoryBase
      *
      * @return GetDivisionRankingResponse
      */
-    public function listDivisionRankingByDivisionIdAndWeekName(int $divisionId, string $weekName): ResponseInterface
-    {
+    public function listDivisionRankingByDivisionIdAndWeekName(
+        int $divisionId,
+        string $weekName
+    ): ResponseInterface {
         $request = new GetDivisionRankingRequest(
             [
                 'DivisionId' => $divisionId,
@@ -46,4 +49,5 @@ class DivisionRepository extends RepositoryBase
 
         return $this->client->handleRequest($request);
     }
+
 }

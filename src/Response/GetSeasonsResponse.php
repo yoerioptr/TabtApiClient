@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Entries\SeasonEntry;
  */
 class GetSeasonsResponse implements ResponseInterface
 {
+
     /**
      * @var int
      */
@@ -69,4 +70,5 @@ class GetSeasonsResponse implements ResponseInterface
     {
         return $this->seasonEntries;
     }
+
 }

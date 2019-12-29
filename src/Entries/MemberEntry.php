@@ -9,6 +9,7 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 class MemberEntry
 {
+
     /**
      * @var int
      */
@@ -99,4 +100,5 @@ class MemberEntry
     {
         return $this->ranking;
     }
+
 }

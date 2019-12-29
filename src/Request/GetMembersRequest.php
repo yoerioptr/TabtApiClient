@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Response\GetMembersResponse;
  */
 class GetMembersRequest extends RequestBase
 {
+
     /**
      * {@inheritDoc}
      */
@@ -26,4 +27,5 @@ class GetMembersRequest extends RequestBase
     {
         return GetMembersResponse::class;
     }
+
 }

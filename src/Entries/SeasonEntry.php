@@ -9,6 +9,7 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 class SeasonEntry
 {
+
     /**
      * @var int
      */
@@ -60,4 +61,5 @@ class SeasonEntry
     {
         return $this->isCurrent;
     }
+
 }

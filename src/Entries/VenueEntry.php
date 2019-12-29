@@ -9,6 +9,7 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 class VenueEntry
 {
+
     /**
      * @var string
      */
@@ -86,4 +87,5 @@ class VenueEntry
     {
         return $this->comment;
     }
+
 }

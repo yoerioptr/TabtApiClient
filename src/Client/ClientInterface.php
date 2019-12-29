@@ -13,6 +13,7 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  */
 interface ClientInterface
 {
+
     /**
      * @param RequestInterface $request
      *
@@ -24,4 +25,5 @@ interface ClientInterface
      * @param CredentialsType $credentials
      */
     public function setCredentials(CredentialsType $credentials): void;
+
 }

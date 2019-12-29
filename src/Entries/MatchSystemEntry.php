@@ -9,6 +9,7 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 class MatchSystemEntry
 {
+
     /**
      * @var int
      */
@@ -74,7 +75,9 @@ class MatchSystemEntry
             }
 
             foreach ($value as $teamMatchDefinitionEntry) {
-                $this->teamMatchDefinitionEntries[] = new TeamMatchDefinitionEntry($teamMatchDefinitionEntry);
+                $this->teamMatchDefinitionEntries[] = new TeamMatchDefinitionEntry(
+                    $teamMatchDefinitionEntry
+                );
             }
         }
     }
@@ -158,4 +161,5 @@ class MatchSystemEntry
     {
         return $this->teamMatchDefinitionEntries;
     }
+
 }

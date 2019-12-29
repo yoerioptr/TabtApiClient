@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Entries\TeamMatchesEntry;
  */
 class GetMatchesResponse implements ResponseInterface
 {
+
     /**
      * @var int
      */
@@ -36,7 +37,9 @@ class GetMatchesResponse implements ResponseInterface
             }
 
             foreach ($value as $teamMatchesEntry) {
-                $this->teamMatchesEntries[] = new TeamMatchesEntry($teamMatchesEntry);
+                $this->teamMatchesEntries[] = new TeamMatchesEntry(
+                    $teamMatchesEntry
+                );
             }
         }
     }
@@ -56,4 +59,5 @@ class GetMatchesResponse implements ResponseInterface
     {
         return $this->teamMatchesEntries;
     }
+
 }

@@ -12,10 +12,16 @@ use Exception;
  */
 class TeamMatchesEntry
 {
+
     /**
      * @var string
      */
     private $matchId;
+
+    /**
+     * @var int
+     */
+    private $matchUniqueId;
 
     /**
      * @var string
@@ -113,6 +119,21 @@ class TeamMatchesEntry
     private $venueEntry;
 
     /**
+     * @var bool
+     */
+    private $isValidated;
+
+    /**
+     * @var bool
+     */
+    private $isLocked;
+
+    /**
+     * @var string|null
+     */
+    private $divisionName;
+
+    /**
      * TeamMatchesEntry constructor.
      *
      * @param $rawResponse
@@ -164,6 +185,7 @@ class TeamMatchesEntry
 
     /**
      * @return DateTime
+     *
      * @throws Exception
      */
     public function getDateTime(): DateTime
@@ -298,4 +320,37 @@ class TeamMatchesEntry
     {
         return $this->venueEntry;
     }
+
+    /**
+     * @return string|null
+     */
+    public function getDivisionName(): ?string
+    {
+        return $this->divisionName;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMatchUniqueId(): int
+    {
+        return $this->matchUniqueId;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isValidated(): bool
+    {
+        return $this->isValidated;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isLocked(): bool
+    {
+        return $this->isLocked;
+    }
+
 }

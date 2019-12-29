@@ -11,6 +11,7 @@ use Yoerioptr\TabtApiClient\Response\TestResponse;
  */
 class TestRequest extends RequestBase
 {
+
     /**
      * {@inheritDoc}
      */
@@ -26,4 +27,5 @@ class TestRequest extends RequestBase
     {
         return TestResponse::class;
     }
+
 }
