@@ -21,7 +21,7 @@ class ClubEntry
     private $name;
 
     /**
-     * @var int
+     * @var string
      */
     private $longName;
 
@@ -82,9 +82,9 @@ class ClubEntry
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getLongName(): int
+    public function getLongName(): string
     {
         return $this->longName;
     }
