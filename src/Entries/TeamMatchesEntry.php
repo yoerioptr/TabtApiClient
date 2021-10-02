@@ -168,9 +168,9 @@ class TeamMatchesEntry
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDate(): string
+    public function getDate(): ?string
     {
         return $this->date;
     }
@@ -234,9 +234,9 @@ class TeamMatchesEntry
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getScore(): string
+    public function getScore(): ?string
     {
         return $this->score;
     }
