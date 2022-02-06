@@ -7,23 +7,23 @@ namespace Yoerioptr\TabtApiClient\Entries;
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class CredentialsType implements RequestTypeInterface
+final class CredentialsType implements RequestTypeInterface
 {
 
     /**
      * @var string
      */
-    private $account;
+    private string $account;
 
     /**
      * @var string
      */
-    private $password;
+    private string $password;
 
     /**
      * @var int|null
      */
-    private $onBehalfOf;
+    private ?int $onBehalfOf;
 
     /**
      * CredentialsType constructor.

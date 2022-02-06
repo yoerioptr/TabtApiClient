@@ -15,13 +15,13 @@ use Yoerioptr\TabtApiClient\Repository\TestRepository;
  *
  * @package Yoerioptr\TabtApiClient
  */
-class Tabt implements TabtInterface
+final class Tabt implements TabtInterface
 {
 
     /**
      * @var ClientInterface
      */
-    private $client;
+    private ClientInterface $client;
 
     /**
      * Tabt constructor.

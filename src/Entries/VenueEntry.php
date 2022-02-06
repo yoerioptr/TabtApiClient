@@ -7,33 +7,33 @@ namespace Yoerioptr\TabtApiClient\Entries;
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class VenueEntry
+final class VenueEntry
 {
 
     /**
      * @var string
      */
-    private $name;
+    private string $name;
 
     /**
      * @var string
      */
-    private $street;
+    private string $street;
 
     /**
      * @var string
      */
-    private $town;
+    private string $town;
 
     /**
      * @var string|null
      */
-    private $phone;
+    private ?string $phone;
 
     /**
      * @var string|null
      */
-    private $comment;
+    private ?string $comment;
 
     /**
      * VenueEntry constructor.

@@ -3,7 +3,6 @@
 namespace Yoerioptr\TabtApiClient\Repository;
 
 use Yoerioptr\TabtApiClient\Request\TestRequest;
-use Yoerioptr\TabtApiClient\Response\ResponseInterface;
 use Yoerioptr\TabtApiClient\Response\TestResponse;
 
 /**
@@ -11,13 +10,13 @@ use Yoerioptr\TabtApiClient\Response\TestResponse;
  *
  * @package Yoerioptr\TabtApiClient\Repository
  */
-class TestRepository extends RepositoryBase
+final class TestRepository extends RepositoryBase
 {
 
     /**
      * @return TestResponse
      */
-    public function info(): ResponseInterface
+    public function info(): TestResponse
     {
         $request = new TestRequest();
 

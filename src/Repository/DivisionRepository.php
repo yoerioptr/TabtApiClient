@@ -4,14 +4,13 @@ namespace Yoerioptr\TabtApiClient\Repository;
 
 use Yoerioptr\TabtApiClient\Request\GetDivisionRankingRequest;
 use Yoerioptr\TabtApiClient\Response\GetDivisionRankingResponse;
-use Yoerioptr\TabtApiClient\Response\ResponseInterface;
 
 /**
  * Class DivisionRepository
  *
  * @package Yoerioptr\TabtApiClient\Repository
  */
-class DivisionRepository extends RepositoryBase
+final class DivisionRepository extends RepositoryBase
 {
 
     /**
@@ -19,8 +18,8 @@ class DivisionRepository extends RepositoryBase
      *
      * @return GetDivisionRankingResponse
      */
-    public function listDivisionsRankingByDivisionId(int $divisionId
-    ): ResponseInterface {
+    public function listDivisionsRankingByDivisionId(int $divisionId): GetDivisionRankingResponse
+    {
         $request = new GetDivisionRankingRequest(
             [
                 'DivisionId' => $divisionId,
@@ -36,10 +35,8 @@ class DivisionRepository extends RepositoryBase
      *
      * @return GetDivisionRankingResponse
      */
-    public function listDivisionRankingByDivisionIdAndWeekName(
-        int $divisionId,
-        string $weekName
-    ): ResponseInterface {
+    public function listDivisionRankingByDivisionIdAndWeekName(int $divisionId, string $weekName): GetDivisionRankingResponse
+    {
         $request = new GetDivisionRankingRequest(
             [
                 'DivisionId' => $divisionId,

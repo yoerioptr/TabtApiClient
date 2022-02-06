@@ -9,18 +9,18 @@ use Yoerioptr\TabtApiClient\Entries\TeamMatchesEntry;
  *
  * @package Yoerioptr\TabtApiClient\Response
  */
-class GetMatchesResponse implements ResponseInterface
+final class GetMatchesResponse implements ResponseInterface
 {
 
     /**
      * @var int
      */
-    private $matchCount;
+    private int $matchCount;
 
     /**
      * @var TeamMatchesEntry[]
      */
-    private $teamMatchesEntries = [];
+    private array $teamMatchesEntries = [];
 
     /**
      * GetMatchesResponse constructor.

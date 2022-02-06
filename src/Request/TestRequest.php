@@ -9,7 +9,7 @@ use Yoerioptr\TabtApiClient\Response\TestResponse;
  *
  * @package Yoerioptr\TabtApiClient\Request
  */
-class TestRequest extends RequestBase
+final class TestRequest extends RequestBase
 {
 
     /**

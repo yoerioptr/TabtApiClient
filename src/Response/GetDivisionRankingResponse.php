@@ -9,18 +9,18 @@ use Yoerioptr\TabtApiClient\Entries\RankingEntry;
  *
  * @package Yoerioptr\TabtApiClient\Response
  */
-class GetDivisionRankingResponse implements ResponseInterface
+final class GetDivisionRankingResponse implements ResponseInterface
 {
 
     /**
      * @var string
      */
-    private $divisionName;
+    private string $divisionName;
 
     /**
      * @var RankingEntry[]
      */
-    private $rankingEntries = [];
+    private array $rankingEntries = [];
 
     /**
      * GetDivisionRankingResponse constructor.
