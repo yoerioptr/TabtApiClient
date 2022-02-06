@@ -1,6 +1,4 @@
-parameters:
-    git_dir: .
-    bin_dir: vendor/bin # depends on the project configuration
+grumphp:
     ascii:
     tasks:
         git_blacklist:
