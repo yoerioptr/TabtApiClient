@@ -7,23 +7,23 @@ namespace Yoerioptr\TabtApiClient\Entries;
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class SeasonEntry
+final class SeasonEntry
 {
 
     /**
      * @var int
      */
-    private $season;
+    private int $season;
 
     /**
      * @var string
      */
-    private $name;
+    private string $name;
 
     /**
      * @var bool
      */
-    private $isCurrent;
+    private bool $isCurrent;
 
     /**
      * SeasonEntry constructor.

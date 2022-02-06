@@ -7,38 +7,38 @@ namespace Yoerioptr\TabtApiClient\Entries;
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class MemberEntry
+final class MemberEntry
 {
 
     /**
      * @var int
      */
-    private $position;
+    private int $position;
 
     /**
      * @var int
      */
-    private $uniqueIndex;
+    private int $uniqueIndex;
 
     /**
      * @var int
      */
-    private $rankingIndex;
+    private int $rankingIndex;
 
     /**
      * @var string
      */
-    private $firstName;
+    private string $firstName;
 
     /**
      * @var string
      */
-    private $lastName;
+    private string $lastName;
 
     /**
      * @var string
      */
-    private $ranking;
+    private string $ranking;
 
     /**
      * MemberEntry constructor.

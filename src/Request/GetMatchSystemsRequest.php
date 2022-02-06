@@ -10,7 +10,7 @@ use Yoerioptr\TabtApiClient\Response\GetMatchSystemsResponse;
  *
  * @package Yoerioptr\TabtApiClient\Request
  */
-class GetMatchSystemsRequest extends RequestBase
+final class GetMatchSystemsRequest extends RequestBase
 {
 
     /**

@@ -9,23 +9,23 @@ use Yoerioptr\TabtApiClient\Entries\TeamEntry;
  *
  * @package Yoerioptr\TabtApiClient\Response
  */
-class GetClubTeamsResponse implements ResponseInterface
+final class GetClubTeamsResponse implements ResponseInterface
 {
 
     /**
      * @var string
      */
-    private $clubName;
+    private string $clubName;
 
     /**
      * @var int
      */
-    private $teamCount;
+    private int $teamCount;
 
     /**
      * @var TeamEntry[]
      */
-    private $teamEntries = [];
+    private array $teamEntries = [];
 
     /**
      * GetClubTeamsResponse constructor.

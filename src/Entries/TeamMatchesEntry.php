@@ -10,128 +10,128 @@ use Exception;
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class TeamMatchesEntry
+final class TeamMatchesEntry
 {
 
     /**
      * @var string
      */
-    private $matchId;
+    private string $matchId;
 
     /**
      * @var int
      */
-    private $matchUniqueId;
+    private int $matchUniqueId;
 
     /**
      * @var string
      */
-    private $weekName;
+    private string $weekName;
 
     /**
      * @var string
      */
-    private $date;
+    private string $date;
 
     /**
      * @var string
      */
-    private $time;
+    private string $time;
 
     /**
      * @var int
      */
-    private $venue;
+    private int $venue;
 
     /**
      * @var string
      */
-    private $homeClub;
+    private string $homeClub;
 
     /**
      * @var string
      */
-    private $homeTeam;
+    private string $homeTeam;
 
     /**
      * @var string
      */
-    private $awayClub;
+    private string $awayClub;
 
     /**
      * @var string
      */
-    private $awayTeam;
+    private string $awayTeam;
 
     /**
      * @var string
      */
-    private $score;
+    private string $score;
 
     /**
      * @var string
      */
-    private $previousWeekName;
+    private string $previousWeekName;
 
     /**
      * @var string
      */
-    private $nextWeekName;
+    private string $nextWeekName;
 
     /**
      * @var bool
      */
-    private $isHomeForfeited;
+    private bool $isHomeForfeited;
 
     /**
      * @var bool
      */
-    private $isAwayForfeited;
+    private bool $isAwayForfeited;
 
     /**
      * @var int
      */
-    private $divisionId;
+    private int $divisionId;
 
     /**
      * @var int
      */
-    private $divisionCategory;
+    private int $divisionCategory;
 
     /**
      * @var string
      */
-    private $isHomeWithdrawn;
+    private string $isHomeWithdrawn;
 
     /**
      * @var string
      */
-    private $isAwayWithdrawn;
+    private string $isAwayWithdrawn;
 
     /**
      * @var string
      */
-    private $venueClub;
+    private string $venueClub;
 
     /**
      * @var VenueEntry|null
      */
-    private $venueEntry;
+    private ?VenueEntry $venueEntry;
 
     /**
      * @var bool
      */
-    private $isValidated;
+    private bool $isValidated;
 
     /**
      * @var bool
      */
-    private $isLocked;
+    private bool $isLocked;
 
     /**
      * @var string|null
      */
-    private $divisionName;
+    private ?string $divisionName;
 
     /**
      * TeamMatchesEntry constructor.

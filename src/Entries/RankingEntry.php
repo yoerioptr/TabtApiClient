@@ -7,68 +7,68 @@ namespace Yoerioptr\TabtApiClient\Entries;
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class RankingEntry
+final class RankingEntry
 {
 
     /**
      * @var int
      */
-    private $position;
+    private int $position;
 
     /**
      * @var string
      */
-    private $team;
+    private string $team;
 
     /**
      * @var int
      */
-    private $gamesPlayed;
+    private int $gamesPlayed;
 
     /**
      * @var int
      */
-    private $gamesWon;
+    private int $gamesWon;
 
     /**
      * @var int
      */
-    private $gamesLost;
+    private int $gamesLost;
 
     /**
      * @var int
      */
-    private $gamesDraw;
+    private int $gamesDraw;
 
     /**
      * @var int
      */
-    private $individualMatchesWon;
+    private int $individualMatchesWon;
 
     /**
      * @var int
      */
-    private $individualMatchesLost;
+    private int $individualMatchesLost;
 
     /**
      * @var int
      */
-    private $individualSetsWon;
+    private int $individualSetsWon;
 
     /**
      * @var int
      */
-    private $individualSetsLost;
+    private int $individualSetsLost;
 
     /**
      * @var int
      */
-    private $points;
+    private int $points;
 
     /**
      * @var string
      */
-    private $teamClub;
+    private string $teamClub;
 
     /**
      * RankingEntry constructor.

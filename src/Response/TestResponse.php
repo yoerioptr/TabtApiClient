@@ -9,53 +9,53 @@ use DateTime;
  *
  * @package Yoerioptr\TabtApiClient\Response
  */
-class TestResponse implements ResponseInterface
+final class TestResponse implements ResponseInterface
 {
 
     /**
      * @var DateTime
      */
-    private $timestamp;
+    private DateTime $timestamp;
 
     /**
      * @var string
      */
-    private $apiVersion;
+    private string $apiVersion;
 
     /**
      * @var bool
      */
-    private $isValidAccount;
+    private bool $isValidAccount;
 
     /**
      * @var string
      */
-    private $language;
+    private string $language;
 
     /**
      * @var string
      */
-    private $database;
+    private string $database;
 
     /**
      * @var string
      */
-    private $requestorIp;
+    private string $requestorIp;
 
     /**
      * @var int
      */
-    private $consumedTicks;
+    private int $consumedTicks;
 
     /**
      * @var int
      */
-    private $currentQuota;
+    private int $currentQuota;
 
     /**
      * @var int
      */
-    private $allowedQuota;
+    private int $allowedQuota;
 
     /**
      * TestResponse constructor.

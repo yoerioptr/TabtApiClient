@@ -9,7 +9,7 @@ use Yoerioptr\TabtApiClient\Response\GetSeasonsResponse;
  *
  * @package Yoerioptr\TabtApiClient\Request
  */
-class GetSeasonsRequest extends RequestBase
+final class GetSeasonsRequest extends RequestBase
 {
 
     /**

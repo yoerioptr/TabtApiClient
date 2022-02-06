@@ -9,7 +9,7 @@ use Yoerioptr\TabtApiClient\Response\GetMembersResponse;
  *
  * @package Yoerioptr\TabtApiClient\Request
  */
-class GetMembersRequest extends RequestBase
+final class GetMembersRequest extends RequestBase
 {
 
     /**

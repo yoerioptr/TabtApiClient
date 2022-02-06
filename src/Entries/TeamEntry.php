@@ -3,42 +3,42 @@
 namespace Yoerioptr\TabtApiClient\Entries;
 
 /**
- * Class TeamEntriy
+ * Class TeamEntry
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class TeamEntry
+final class TeamEntry
 {
 
     /**
      * @var string
      */
-    private $teamId;
+    private string $teamId;
 
     /**
      * @var string
      */
-    private $team;
+    private string $team;
 
     /**
      * @var int
      */
-    private $divisionId;
+    private int $divisionId;
 
     /**
      * @var string
      */
-    private $divisionName;
+    private string $divisionName;
 
     /**
      * @var int
      */
-    private $divisionCategory;
+    private int $divisionCategory;
 
     /**
      * @var int
      */
-    private $matchType;
+    private int $matchType;
 
     /**
      * TeamEntry constructor.
