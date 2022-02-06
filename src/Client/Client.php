@@ -23,7 +23,7 @@ final class Client implements ClientInterface
     /**
      * @var CredentialsType|null
      */
-    private ?CredentialsType $credentials;
+    private ?CredentialsType $credentials = null;
 
     /**
      * Client constructor.

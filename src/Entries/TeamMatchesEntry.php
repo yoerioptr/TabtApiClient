@@ -29,9 +29,9 @@ final class TeamMatchesEntry
     private string $weekName;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $date;
+    private ?string $date = null;
 
     /**
      * @var string
