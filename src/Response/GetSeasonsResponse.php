@@ -9,23 +9,23 @@ use Yoerioptr\TabtApiClient\Entries\SeasonEntry;
  *
  * @package Yoerioptr\TabtApiClient\Response
  */
-class GetSeasonsResponse implements ResponseInterface
+final class GetSeasonsResponse implements ResponseInterface
 {
 
     /**
      * @var int
      */
-    private $currentSeason;
+    private int $currentSeason;
 
     /**
      * @var string
      */
-    private $currentSeasonName;
+    private string $currentSeasonName;
 
     /**
      * @var SeasonEntry[]
      */
-    private $seasonEntries = [];
+    private array $seasonEntries = [];
 
     /**
      * GetSeasonsResponse constructor.

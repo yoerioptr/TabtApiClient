@@ -9,7 +9,7 @@ use Yoerioptr\TabtApiClient\Response\GetClubTeamsResponse;
  *
  * @package Yoerioptr\TabtApiClient\Request
  */
-class GetClubTeamsRequest extends RequestBase
+final class GetClubTeamsRequest extends RequestBase
 {
 
     /**

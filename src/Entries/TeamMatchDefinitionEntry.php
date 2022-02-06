@@ -7,28 +7,28 @@ namespace Yoerioptr\TabtApiClient\Entries;
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class TeamMatchDefinitionEntry
+final class TeamMatchDefinitionEntry
 {
 
     /**
      * @var int
      */
-    private $position;
+    private int $position;
 
     /**
      * @var int
      */
-    private $type;
+    private int $type;
 
     /**
      * @var int
      */
-    private $homePlayerIndex;
+    private int $homePlayerIndex;
 
     /**
      * @var int
      */
-    private $awayPlayerIndex;
+    private int $awayPlayerIndex;
 
     /**
      * TeamMatchDefinitionEntry constructor.

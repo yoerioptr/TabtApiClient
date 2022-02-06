@@ -7,53 +7,53 @@ namespace Yoerioptr\TabtApiClient\Entries;
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class MatchSystemEntry
+final class MatchSystemEntry
 {
 
     /**
      * @var int
      */
-    private $uniqueIndex;
+    private int $uniqueIndex;
 
     /**
      * @var string
      */
-    private $name;
+    private string $name;
 
     /**
      * @var int
      */
-    private $singleMatchCount;
+    private int $singleMatchCount;
 
     /**
      * @var int
      */
-    private $doubleMatchCount;
+    private int $doubleMatchCount;
 
     /**
      * @var int
      */
-    private $setCount;
+    private int $setCount;
 
     /**
      * @var int
      */
-    private $pointCount;
+    private int $pointCount;
 
     /**
      * @var bool
      */
-    private $forcedDoubleTeams;
+    private bool $forcedDoubleTeams;
 
     /**
      * @var int
      */
-    private $substituteCount;
+    private int $substituteCount;
 
     /**
      * @var int
      */
-    private $teamMatchCount;
+    private int $teamMatchCount;
 
     /**
      * @var TeamMatchDefinitionEntry[]

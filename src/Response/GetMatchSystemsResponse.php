@@ -9,18 +9,18 @@ use Yoerioptr\TabtApiClient\Entries\MatchSystemEntry;
  *
  * @package Yoerioptr\TabtApiClient\Response
  */
-class GetMatchSystemsResponse implements ResponseInterface
+final class GetMatchSystemsResponse implements ResponseInterface
 {
 
     /**
      * @var int
      */
-    private $matchSystemCount;
+    private int $matchSystemCount;
 
     /**
      * @var array
      */
-    private $matchSystemEntries = [];
+    private array $matchSystemEntries = [];
 
     /**
      * GetMatchSystemsResponse constructor.

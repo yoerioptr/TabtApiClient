@@ -7,43 +7,43 @@ namespace Yoerioptr\TabtApiClient\Entries;
  *
  * @package Yoerioptr\TabtApiClient\Entries
  */
-class ClubEntry
+final class ClubEntry
 {
 
     /**
      * @var string
      */
-    private $uniqueIndex;
+    private string $uniqueIndex;
 
     /**
      * @var string
      */
-    private $name;
+    private string $name;
 
     /**
      * @var string
      */
-    private $longName;
+    private string $longName;
 
     /**
      * @var int
      */
-    private $category;
+    private int $category;
 
     /**
      * @var int
      */
-    private $categoryName;
+    private int $categoryName;
 
     /**
      * @var int
      */
-    private $venueCount;
+    private int $venueCount;
 
     /**
      * @var VenueEntry[]
      */
-    private $venueEntries;
+    private array $venueEntries;
 
     /**
      * TeamEntry constructor.
@@ -52,7 +52,7 @@ class ClubEntry
      */
     public function __construct($rawResponse)
     {
-        foreach ((array) $rawResponse as $key => $value) {
+        foreach ((array)$rawResponse as $key => $value) {
             if ($key !== 'VenueEntries') {
                 $property = lcfirst($key);
                 $this->$property = $value;

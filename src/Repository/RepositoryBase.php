@@ -15,7 +15,7 @@ abstract class RepositoryBase
     /**
      * @var ClientInterface
      */
-    protected $client;
+    protected ClientInterface $client;
 
     /**
      * RepositoryBase constructor.

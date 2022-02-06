@@ -9,18 +9,18 @@ use Yoerioptr\TabtApiClient\Entries\MemberEntry;
  *
  * @package Yoerioptr\TabtApiClient\Response
  */
-class GetMembersResponse implements ResponseInterface
+final class GetMembersResponse implements ResponseInterface
 {
 
     /**
      * @var int
      */
-    private $memberCount;
+    private int $memberCount;
 
     /**
      * @var array
      */
-    private $memberEntries = [];
+    private array $memberEntries = [];
 
     /**
      * GetMembersResponse constructor.

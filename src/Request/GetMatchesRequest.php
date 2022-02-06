@@ -9,7 +9,7 @@ use Yoerioptr\TabtApiClient\Response\GetMatchesResponse;
  *
  * @package Yoerioptr\TabtApiClient\Request
  */
-class GetMatchesRequest extends RequestBase
+final class GetMatchesRequest extends RequestBase
 {
 
     public const SHOW_DIVISION_NAME = 'yes';

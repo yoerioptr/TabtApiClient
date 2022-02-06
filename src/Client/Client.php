@@ -12,18 +12,18 @@ use Yoerioptr\TabtApiClient\Response\ResponseInterface;
  *
  * @package Yoerioptr\TabtApiClient\Client
  */
-class Client implements ClientInterface
+final class Client implements ClientInterface
 {
 
     /**
      * @var SoapClient
      */
-    private $soapClient;
+    private SoapClient $soapClient;
 
     /**
-     * @var CredentialsType
+     * @var CredentialsType|null
      */
-    private $credentials;
+    private ?CredentialsType $credentials;
 
     /**
      * Client constructor.

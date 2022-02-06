@@ -9,18 +9,18 @@ use Yoerioptr\TabtApiClient\Entries\ClubEntry;
  *
  * @package Yoerioptr\TabtApiClient\Response
  */
-class GetClubsResponse implements ResponseInterface
+final class GetClubsResponse implements ResponseInterface
 {
 
     /**
      * @var int
      */
-    private $clubCount;
+    private int $clubCount;
 
     /**
      * @var ClubEntry[]
      */
-    private $clubEntries = [];
+    private array $clubEntries = [];
 
     /**
      * GetClubTeamsResponse constructor.

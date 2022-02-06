@@ -9,7 +9,7 @@ use Yoerioptr\TabtApiClient\Response\GetDivisionRankingResponse;
  *
  * @package Yoerioptr\TabtApiClient\Request
  */
-class GetDivisionRankingRequest extends RequestBase
+final class GetDivisionRankingRequest extends RequestBase
 {
 
     /**
