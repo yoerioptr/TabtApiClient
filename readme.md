@@ -36,4 +36,4 @@ Executing requests makes use of repositories, which can easily be accessed from 
 $testResponse = $tabt->test()->info();
 ```
 
-All usable requests can be found [here](https://github.com/yoerioptr/TabtApiClient/tree/master/src/Requests)
+All usable requests can be found [here](https://github.com/yoerioptr/TabtApiClient/tree/master/src/Request)
