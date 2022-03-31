@@ -31,9 +31,9 @@ final class ClubEntry
     private int $category;
 
     /**
-     * @var int
+     * @var string
      */
-    private int $categoryName;
+    private string $categoryName;
 
     /**
      * @var int
@@ -98,9 +98,9 @@ final class ClubEntry
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getCategoryName(): int
+    public function getCategoryName(): string
     {
         return $this->categoryName;
     }
