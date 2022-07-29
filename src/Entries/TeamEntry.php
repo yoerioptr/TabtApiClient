@@ -21,9 +21,9 @@ final class TeamEntry
     private string $team;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $divisionId;
+    private ?int $divisionId = null;
 
     /**
      * @var string
@@ -71,9 +71,9 @@ final class TeamEntry
 
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getDivisionId(): int
+    public function getDivisionId(): ?int
     {
         return $this->divisionId;
     }

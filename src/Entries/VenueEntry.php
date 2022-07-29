@@ -28,12 +28,12 @@ final class VenueEntry
     /**
      * @var string|null
      */
-    private ?string $phone;
+    private ?string $phone = null;
 
     /**
      * @var string|null
      */
-    private ?string $comment;
+    private ?string $comment = null;
 
     /**
      * VenueEntry constructor.

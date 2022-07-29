@@ -23,7 +23,7 @@ final class CredentialsType implements RequestTypeInterface
     /**
      * @var int|null
      */
-    private ?int $onBehalfOf;
+    private ?int $onBehalfOf = null;
 
     /**
      * CredentialsType constructor.

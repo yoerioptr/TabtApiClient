@@ -52,14 +52,14 @@ final class ClubEntry
      */
     public function __construct($rawResponse)
     {
-        foreach ((array)$rawResponse as $key => $value) {
+        foreach ((array) $rawResponse as $key => $value) {
             if ($key !== 'VenueEntries') {
                 $property = lcfirst($key);
                 $this->$property = $value;
                 continue;
             }
 
-            foreach ($value as $venueEntry) {
+            foreach (!is_array($value) ? $value : [$value] as $venueEntry) {
                 $this->venueEntries[] = new VenueEntry($venueEntry);
             }
         }

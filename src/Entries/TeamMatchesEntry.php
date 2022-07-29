@@ -34,9 +34,9 @@ final class TeamMatchesEntry
     private ?string $date = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $time;
+    private ?string $time = null;
 
     /**
      * @var int
@@ -66,7 +66,7 @@ final class TeamMatchesEntry
     /**
      * @var string
      */
-    private string $score;
+    private string $score = '';
 
     /**
      * @var string
@@ -109,14 +109,14 @@ final class TeamMatchesEntry
     private string $isAwayWithdrawn;
 
     /**
-     * @var string
+     * @var string|int
      */
-    private string $venueClub;
+    private ?string $venueClub = null;
 
     /**
      * @var VenueEntry|null
      */
-    private ?VenueEntry $venueEntry;
+    private ?VenueEntry $venueEntry = null;
 
     /**
      * @var bool
@@ -131,7 +131,7 @@ final class TeamMatchesEntry
     /**
      * @var string|null
      */
-    private ?string $divisionName;
+    private ?string $divisionName = null;
 
     /**
      * TeamMatchesEntry constructor.
@@ -176,9 +176,9 @@ final class TeamMatchesEntry
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getTime(): string
+    public function getTime(): ?string
     {
         return $this->time;
     }
@@ -188,9 +188,11 @@ final class TeamMatchesEntry
      *
      * @throws Exception
      */
-    public function getDateTime(): DateTime
+    public function getDateTime(): ?DateTime
     {
-        return new DateTime($this->date . ' ' . $this->time);
+        return !is_null($this->getDate()) && !is_null($this->getTime())
+            ? new DateTime("{$this->getDate()} {$this->getTime()}")
+            : null;
     }
 
     /**
@@ -292,7 +294,7 @@ final class TeamMatchesEntry
     /**
      * @return string
      */
-    public function getIsHomeWithdrawn(): string
+    public function getHomeWithdrawn(): string
     {
         return $this->isHomeWithdrawn;
     }
@@ -300,15 +302,15 @@ final class TeamMatchesEntry
     /**
      * @return string
      */
-    public function getIsAwayWithdrawn(): string
+    public function getAwayWithdrawn(): string
     {
         return $this->isAwayWithdrawn;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getVenueClub(): string
+    public function getVenueClub(): ?string
     {
         return $this->venueClub;
     }
