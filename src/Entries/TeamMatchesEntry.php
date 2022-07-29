@@ -116,7 +116,7 @@ final class TeamMatchesEntry
     /**
      * @var VenueEntry|null
      */
-    private ?VenueEntry $venueEntry;
+    private ?VenueEntry $venueEntry = null;
 
     /**
      * @var bool
@@ -131,7 +131,7 @@ final class TeamMatchesEntry
     /**
      * @var string|null
      */
-    private ?string $divisionName;
+    private ?string $divisionName = null;
 
     /**
      * TeamMatchesEntry constructor.
