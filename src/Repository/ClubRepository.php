@@ -26,6 +26,30 @@ final class ClubRepository extends RepositoryBase
     }
 
     /**
+     * @param array $parameters
+     *
+     * @return GetClubsResponse
+     */
+    public function listClubsBy(array $parameters): GetClubsResponse
+    {
+        $request = new GetClubsRequest($parameters);
+
+        return $this->client->handleRequest($request);
+    }
+
+    /**
+     * @param array $parameters
+     *
+     * @return GetClubTeamsResponse
+     */
+    public function listTeamsBy(array $parameters): GetClubTeamsResponse
+    {
+        $request = new GetClubTeamsRequest($parameters);
+
+        return $this->client->handleRequest($request);
+    }
+
+    /**
      * @param string $club
      *
      * @return GetClubTeamsResponse
