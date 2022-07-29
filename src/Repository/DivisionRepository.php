@@ -14,11 +14,23 @@ final class DivisionRepository extends RepositoryBase
 {
 
     /**
+     * @param array $parameters
+     *
+     * @return GetDivisionRankingResponse
+     */
+    public function listDivisionRankingBy(array $parameters): GetDivisionRankingResponse
+    {
+        $request = new GetDivisionRankingRequest($parameters);
+
+        return $this->client->handleRequest($request);
+    }
+
+    /**
      * @param int $divisionId
      *
      * @return GetDivisionRankingResponse
      */
-    public function listDivisionsRankingByDivisionId(int $divisionId): GetDivisionRankingResponse
+    public function listDivisionRankingByDivisionId(int $divisionId): GetDivisionRankingResponse
     {
         $request = new GetDivisionRankingRequest(
             [
