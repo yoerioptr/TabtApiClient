@@ -61,12 +61,20 @@ final class TestResponse implements ResponseInterface
      * TestResponse constructor.
      *
      * @param object $rawResponse
+     * @throws \Exception
      */
     public function __construct($rawResponse)
     {
         foreach ((array) $rawResponse as $key => $value) {
             $property = lcfirst($key);
-            $this->$property = $value;
+
+            switch ($property) {
+                case 'timestamp':
+                    $this->timestamp = new DateTime((string) $value);
+                    break;
+                default:
+                    $this->$property = $value;
+            }
         }
     }
 

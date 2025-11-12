@@ -16,7 +16,7 @@ abstract class RequestBase implements RequestInterface
      *
      * @param array|null $parameters
      */
-    public function __construct(array $parameters = null)
+    public function __construct(?array $parameters = null)
     {
         $this->parameters = $parameters;
     }
