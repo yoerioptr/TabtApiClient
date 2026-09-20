@@ -1,4 +1,7 @@
 # TabtApiClient
+
+[![No AI](https://custom-icon-badges.demolab.com/badge/No%20AI-2f2f2f?logo=non-ai&logoColor=white&logoSize=auto)](#)
+
 The TabT API Client is a helper library for [Frenoy's TabT API](http://api.frenoy.net/)
 
 ## Setup

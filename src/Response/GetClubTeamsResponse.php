@@ -32,7 +32,7 @@ final class GetClubTeamsResponse implements ResponseInterface
      *
      * @param $rawResponse
      */
-    public function __construct($rawResponse)
+    public function __construct(mixed $rawResponse)
     {
         foreach ((array) $rawResponse as $key => $value) {
             if ($key !== 'TeamEntries') {

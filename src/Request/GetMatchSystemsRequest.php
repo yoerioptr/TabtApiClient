@@ -2,7 +2,6 @@
 
 namespace Yoerioptr\TabtApiClient\Request;
 
-use Yoerioptr\TabtApiClient\Response\GetMatchesResponse;
 use Yoerioptr\TabtApiClient\Response\GetMatchSystemsResponse;
 
 /**
