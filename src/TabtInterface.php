@@ -6,8 +6,10 @@ use Yoerioptr\TabtApiClient\Repository\ClubRepository;
 use Yoerioptr\TabtApiClient\Repository\DivisionRepository;
 use Yoerioptr\TabtApiClient\Repository\MatchRepository;
 use Yoerioptr\TabtApiClient\Repository\MemberRepository;
+use Yoerioptr\TabtApiClient\Repository\PlayerCategoryRepository;
 use Yoerioptr\TabtApiClient\Repository\SeasonRepository;
 use Yoerioptr\TabtApiClient\Repository\TestRepository;
+use Yoerioptr\TabtApiClient\Repository\TournamentRepository;
 
 /**
  * Interface TabtInterface
@@ -46,5 +48,15 @@ interface TabtInterface
      * @return MemberRepository
      */
     public function member(): MemberRepository;
+
+    /**
+     * @return TournamentRepository
+     */
+    public function tournament(): TournamentRepository;
+
+    /**
+     * @return PlayerCategoryRepository
+     */
+    public function playerCategory(): PlayerCategoryRepository;
 
 }

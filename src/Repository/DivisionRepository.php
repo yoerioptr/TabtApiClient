@@ -3,7 +3,9 @@
 namespace Yoerioptr\TabtApiClient\Repository;
 
 use Yoerioptr\TabtApiClient\Request\GetDivisionRankingRequest;
+use Yoerioptr\TabtApiClient\Request\GetDivisionsRequest;
 use Yoerioptr\TabtApiClient\Response\GetDivisionRankingResponse;
+use Yoerioptr\TabtApiClient\Response\GetDivisionsResponse;
 
 /**
  * Class DivisionRepository
@@ -12,6 +14,28 @@ use Yoerioptr\TabtApiClient\Response\GetDivisionRankingResponse;
  */
 final class DivisionRepository extends RepositoryBase
 {
+
+    /**
+     * @return GetDivisionsResponse
+     */
+    public function listDivisions(): GetDivisionsResponse
+    {
+        $request = new GetDivisionsRequest();
+
+        return $this->client->handleRequest($request);
+    }
+
+    /**
+     * @param array $parameters
+     *
+     * @return GetDivisionsResponse
+     */
+    public function listDivisionsBy(array $parameters): GetDivisionsResponse
+    {
+        $request = new GetDivisionsRequest($parameters);
+
+        return $this->client->handleRequest($request);
+    }
 
     /**
      * @param array $parameters

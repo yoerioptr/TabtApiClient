@@ -48,10 +48,11 @@ final class Client implements ClientInterface
      */
     public function handleRequest(RequestInterface $request): ResponseInterface
     {
-        $parameters = array_merge(
-            $request->getParameters() ?: [],
-            $this->credentials ? $this->credentials->toArray() : []
-        );
+        $parameters = $request->getParameters() ?: [];
+
+        if (!is_null($this->credentials)) {
+            $parameters['Credentials'] = $this->credentials->toArray();
+        }
 
         $endpoint = $request->getEndpoint();
         $responseClass = $request->getResponseClass();
