@@ -19,9 +19,9 @@ final class TeamMatchesEntry
     private string $matchId;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $matchUniqueId;
+    private ?int $matchUniqueId = null;
 
     /**
      * @var string
@@ -39,9 +39,9 @@ final class TeamMatchesEntry
     private ?string $time = null;
 
     /**
-     * @var int
+     * @var int|null
      */
-    private int $venue;
+    private ?int $venue = null;
 
     /**
      * @var string
@@ -206,9 +206,9 @@ final class TeamMatchesEntry
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getVenue(): int
+    public function getVenue(): ?int
     {
         return $this->venue;
     }
@@ -350,9 +350,9 @@ final class TeamMatchesEntry
     }
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getMatchUniqueId(): int
+    public function getMatchUniqueId(): ?int
     {
         return $this->matchUniqueId;
     }
