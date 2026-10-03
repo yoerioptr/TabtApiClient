@@ -119,6 +119,11 @@ final class TeamMatchesEntry
     private ?VenueEntry $venueEntry = null;
 
     /**
+     * @var TeamMatchDetailsEntry|null
+     */
+    private ?TeamMatchDetailsEntry $matchDetails = null;
+
+    /**
      * @var bool
      */
     private bool $isValidated;
@@ -141,13 +146,18 @@ final class TeamMatchesEntry
     public function __construct(mixed $rawResponse)
     {
         foreach ((array) $rawResponse as $key => $value) {
-            if ($key !== 'VenueEntry') {
-                $property = lcfirst($key);
-                $this->$property = $value;
+            if ($key === 'VenueEntry') {
+                $this->venueEntry = new VenueEntry($value);
                 continue;
             }
 
-            $this->venueEntry = new VenueEntry($value);
+            if ($key === 'MatchDetails') {
+                $this->matchDetails = new TeamMatchDetailsEntry($value);
+                continue;
+            }
+
+            $property = lcfirst($key);
+            $this->$property = $value;
         }
     }
 
@@ -321,6 +331,14 @@ final class TeamMatchesEntry
     public function getVenueEntry(): ?VenueEntry
     {
         return $this->venueEntry;
+    }
+
+    /**
+     * @return TeamMatchDetailsEntry|null
+     */
+    public function getMatchDetails(): ?TeamMatchDetailsEntry
+    {
+        return $this->matchDetails;
     }
 
     /**

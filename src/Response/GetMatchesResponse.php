@@ -36,7 +36,7 @@ final class GetMatchesResponse implements ResponseInterface
                 continue;
             }
 
-            foreach ($value as $teamMatchesEntry) {
+            foreach (self::normalizeEntries($value) as $teamMatchesEntry) {
                 $this->teamMatchesEntries[] = new TeamMatchesEntry(
                     $teamMatchesEntry
                 );
@@ -58,6 +58,29 @@ final class GetMatchesResponse implements ResponseInterface
     public function getTeamMatchesEntries(): array
     {
         return $this->teamMatchesEntries;
+    }
+
+    /**
+     * The API returns a single object instead of a one-element list when the
+     * request matches exactly one team match.
+     *
+     * @return array<int, mixed>
+     */
+    private static function normalizeEntries(mixed $value): array
+    {
+        if (is_array($value)) {
+            return array_values($value);
+        }
+
+        if (is_object($value)) {
+            $variables = get_object_vars($value);
+
+            if (array_is_list($variables)) {
+                return $variables;
+            }
+        }
+
+        return [$value];
     }
 
 }
