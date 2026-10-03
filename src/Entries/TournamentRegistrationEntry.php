@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Entries;
 
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
+
 /**
  * Class TournamentRegistrationEntry
  *
@@ -9,6 +11,8 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 final class TournamentRegistrationEntry
 {
+
+    use HydratesProperties;
 
     /**
      * @var int
@@ -49,7 +53,7 @@ final class TournamentRegistrationEntry
             }
 
             $property = lcfirst($key);
-            $this->$property = $value;
+            $this->hydrateProperty($property, $value);
         }
     }
 

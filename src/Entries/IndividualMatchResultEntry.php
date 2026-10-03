@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Entries;
 
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
+
 /**
  * Class IndividualMatchResultEntry
  *
@@ -9,6 +11,8 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 final class IndividualMatchResultEntry
 {
+
+    use HydratesProperties;
 
     /**
      * @var int|null
@@ -86,7 +90,7 @@ final class IndividualMatchResultEntry
                 'awayPlayerMatchIndex',
                 'awayPlayerUniqueIndex',
             ], true)) {
-                $this->$property = !is_array($value) ? [$value] : $value;
+                $this->hydrateProperty($property, !is_array($value) ? [$value] : $value);
                 continue;
             }
 
@@ -104,7 +108,7 @@ final class IndividualMatchResultEntry
                 continue;
             }
 
-            $this->$property = $value;
+            $this->hydrateProperty($property, $value);
         }
     }
 

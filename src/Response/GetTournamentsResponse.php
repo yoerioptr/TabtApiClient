@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Response;
 
 use Yoerioptr\TabtApiClient\Entries\TournamentEntry;
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
 
 /**
  * Class GetTournamentsResponse
@@ -11,6 +12,8 @@ use Yoerioptr\TabtApiClient\Entries\TournamentEntry;
  */
 final class GetTournamentsResponse implements ResponseInterface
 {
+
+    use HydratesProperties;
 
     /**
      * @var int
@@ -32,7 +35,7 @@ final class GetTournamentsResponse implements ResponseInterface
         foreach ((array) $rawResponse as $key => $value) {
             if ($key !== 'TournamentEntries') {
                 $property = lcfirst($key);
-                $this->$property = $value;
+                $this->hydrateProperty($property, $value);
                 continue;
             }
 

@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Response;
 
 use DateTime;
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
 
 /**
  * Class TestResponse
@@ -11,6 +12,8 @@ use DateTime;
  */
 final class TestResponse implements ResponseInterface
 {
+
+    use HydratesProperties;
 
     /**
      * @var DateTime
@@ -73,7 +76,7 @@ final class TestResponse implements ResponseInterface
                     $this->timestamp = new DateTime((string) $value);
                     break;
                 default:
-                    $this->$property = $value;
+                    $this->hydrateProperty($property, $value);
             }
         }
     }

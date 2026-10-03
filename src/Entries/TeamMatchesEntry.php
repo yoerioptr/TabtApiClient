@@ -4,6 +4,7 @@ namespace Yoerioptr\TabtApiClient\Entries;
 
 use DateTime;
 use Exception;
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
 
 /**
  * Class TeamMatchesEntry
@@ -12,6 +13,8 @@ use Exception;
  */
 final class TeamMatchesEntry
 {
+
+    use HydratesProperties;
 
     /**
      * @var string
@@ -157,7 +160,7 @@ final class TeamMatchesEntry
             }
 
             $property = lcfirst($key);
-            $this->$property = $value;
+            $this->hydrateProperty($property, $value);
         }
     }
 

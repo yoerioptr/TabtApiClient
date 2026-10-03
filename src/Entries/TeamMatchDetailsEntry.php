@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Entries;
 
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
+
 /**
  * Class TeamMatchDetailsEntry
  *
@@ -9,6 +11,8 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 final class TeamMatchDetailsEntry
 {
+
+    use HydratesProperties;
 
     /**
      * @var bool|null
@@ -96,7 +100,7 @@ final class TeamMatchDetailsEntry
             $property = lcfirst($key);
 
             if ($property === 'homePlayers' || $property === 'awayPlayers') {
-                $this->$property = new TeamMatchPlayerList($value);
+                $this->hydrateProperty($property, new TeamMatchPlayerList($value));
                 continue;
             }
 
@@ -107,7 +111,7 @@ final class TeamMatchDetailsEntry
                 continue;
             }
 
-            $this->$property = $value;
+            $this->hydrateProperty($property, $value);
         }
     }
 

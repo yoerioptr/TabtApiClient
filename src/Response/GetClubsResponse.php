@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Response;
 
 use Yoerioptr\TabtApiClient\Entries\ClubEntry;
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
 
 /**
  * Class GetClubsResponse
@@ -11,6 +12,8 @@ use Yoerioptr\TabtApiClient\Entries\ClubEntry;
  */
 final class GetClubsResponse implements ResponseInterface
 {
+
+    use HydratesProperties;
 
     /**
      * @var int
@@ -32,7 +35,7 @@ final class GetClubsResponse implements ResponseInterface
         foreach ((array) $rawResponse as $key => $value) {
             if ($key !== 'ClubEntries') {
                 $property = lcfirst($key);
-                $this->$property = $value;
+                $this->hydrateProperty($property, $value);
                 continue;
             }
 

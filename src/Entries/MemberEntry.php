@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Entries;
 
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
+
 /**
  * Class MemberEntry
  *
@@ -9,6 +11,8 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 final class MemberEntry
 {
+
+    use HydratesProperties;
 
     /**
      * @var int
@@ -41,6 +45,16 @@ final class MemberEntry
     private string $ranking;
 
     /**
+     * @var string|null
+     */
+    private ?string $status = null;
+
+    /**
+     * @var string|null
+     */
+    private ?string $club = null;
+
+    /**
      * MemberEntry constructor.
      *
      * @param $rawResponse
@@ -49,7 +63,7 @@ final class MemberEntry
     {
         foreach ((array) $rawResponse as $key => $value) {
             $property = lcfirst($key);
-            $this->$property = $value;
+            $this->hydrateProperty($property, $value);
         }
     }
 
@@ -99,6 +113,22 @@ final class MemberEntry
     public function getRanking(): string
     {
         return $this->ranking;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getClub(): ?string
+    {
+        return $this->club;
     }
 
 }

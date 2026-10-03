@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Entries;
 
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
+
 /**
  * Class VenueEntry
  *
@@ -9,6 +11,8 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 final class VenueEntry
 {
+
+    use HydratesProperties;
 
     /**
      * @var string
@@ -44,7 +48,7 @@ final class VenueEntry
     {
         foreach ((array) $rawResponse as $key => $value) {
             $property = lcfirst($key);
-            $this->$property = $value;
+            $this->hydrateProperty($property, $value);
         }
     }
 

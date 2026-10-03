@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Response;
 
 use Yoerioptr\TabtApiClient\Entries\RankingEntry;
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
 
 /**
  * Class GetDivisionRankingResponse
@@ -11,6 +12,8 @@ use Yoerioptr\TabtApiClient\Entries\RankingEntry;
  */
 final class GetDivisionRankingResponse implements ResponseInterface
 {
+
+    use HydratesProperties;
 
     /**
      * @var string
@@ -32,7 +35,7 @@ final class GetDivisionRankingResponse implements ResponseInterface
         foreach ((array) $rawResponse as $key => $value) {
             if ($key !== 'RankingEntries') {
                 $property = lcfirst($key);
-                $this->$property = $value;
+                $this->hydrateProperty($property, $value);
                 continue;
             }
 

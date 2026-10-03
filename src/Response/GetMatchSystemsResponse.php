@@ -3,6 +3,7 @@
 namespace Yoerioptr\TabtApiClient\Response;
 
 use Yoerioptr\TabtApiClient\Entries\MatchSystemEntry;
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
 
 /**
  * Class GetMatchSystemsResponse
@@ -11,6 +12,8 @@ use Yoerioptr\TabtApiClient\Entries\MatchSystemEntry;
  */
 final class GetMatchSystemsResponse implements ResponseInterface
 {
+
+    use HydratesProperties;
 
     /**
      * @var int
@@ -32,7 +35,7 @@ final class GetMatchSystemsResponse implements ResponseInterface
         foreach ((array) $rawResponse as $key => $value) {
             if ($key !== 'MatchSystemEntries') {
                 $property = lcfirst($key);
-                $this->$property = $value;
+                $this->hydrateProperty($property, $value);
                 continue;
             }
 

@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Entries;
 
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
+
 /**
  * Class DivisionEntry
  *
@@ -9,6 +11,8 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 final class DivisionEntry
 {
+
+    use HydratesProperties;
 
     /**
      * @var int
@@ -49,7 +53,7 @@ final class DivisionEntry
     {
         foreach ((array) $rawResponse as $key => $value) {
             $property = lcfirst($key);
-            $this->$property = $value;
+            $this->hydrateProperty($property, $value);
         }
     }
 

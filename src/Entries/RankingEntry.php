@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Entries;
 
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
+
 /**
  * Class RankingEntry
  *
@@ -9,6 +11,8 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 final class RankingEntry
 {
+
+    use HydratesProperties;
 
     /**
      * @var int
@@ -39,6 +43,11 @@ final class RankingEntry
      * @var int
      */
     private int $gamesDraw;
+
+    /**
+     * @var int|null
+     */
+    private ?int $gamesWO = null;
 
     /**
      * @var int
@@ -79,7 +88,7 @@ final class RankingEntry
     {
         foreach ((array) $rawResponse as $key => $value) {
             $property = lcfirst($key);
-            $this->$property = $value;
+            $this->hydrateProperty($property, $value);
         }
     }
 
@@ -129,6 +138,14 @@ final class RankingEntry
     public function getGamesDraw(): int
     {
         return $this->gamesDraw;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getGamesWO(): ?int
+    {
+        return $this->gamesWO;
     }
 
     /**

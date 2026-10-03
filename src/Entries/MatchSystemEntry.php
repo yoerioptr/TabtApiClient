@@ -2,6 +2,8 @@
 
 namespace Yoerioptr\TabtApiClient\Entries;
 
+use Yoerioptr\TabtApiClient\Traits\HydratesProperties;
+
 /**
  * Class TeamMatchSystemEntry
  *
@@ -9,6 +11,8 @@ namespace Yoerioptr\TabtApiClient\Entries;
  */
 final class MatchSystemEntry
 {
+
+    use HydratesProperties;
 
     /**
      * @var int
@@ -70,7 +74,7 @@ final class MatchSystemEntry
         foreach ((array) $rawResponse as $key => $value) {
             if ($key !== 'TeamMatchDefinitionEntries') {
                 $property = lcfirst($key);
-                $this->$property = $value;
+                $this->hydrateProperty($property, $value);
                 continue;
             }
 
